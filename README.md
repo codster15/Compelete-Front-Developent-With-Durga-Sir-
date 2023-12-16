@@ -1,4 +1,4 @@
-##self taught developer
+#self taught developer
 
 
 javascript learning journey
