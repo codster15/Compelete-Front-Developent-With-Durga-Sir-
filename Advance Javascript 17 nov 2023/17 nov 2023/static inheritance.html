@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritence btw teo static objects</title>
+</head>
+<body>
+    
+
+<script>
+
+    var parentdetails = {
+
+        father : "Ram pal",
+        mother : "champavati",
+        location : "coimbatore"
+    }
+
+    var child1 = {
+        name   : "raj",
+        age    : 12,
+        gender : "male",
+       
+        ram (){
+            console.log("name - " + this.name);
+            console.log("age - " + this.age );
+            console.log("gender - " + this.gender);
+            console.log("father - " + this.father);
+            console.log("mother - " + this.mother);
+            console.log("location - " + this.location);
+        }
+    }
+
+        child1.__proto__ = parentdetails;
+        child1.ram();
+
+
+
+
+
+
+    var child2 = {
+        name   : "teena",
+        age    : 15,
+        gender : "female",
+       teena (){
+            console.log("name - " + this.name);
+            console.log("age - " + this.age );
+            console.log("gender - " + this.gender);
+            console.log("father - " + this.father);
+            console.log("mother - " + this.mother);
+            console.log("location - " + this.location);
+        }
+        
+    }
+
+    child2.__proto__ = parentdetails;
+    child2.teena();
+
+
+</script>
+
+
+
+</body>
+</html>

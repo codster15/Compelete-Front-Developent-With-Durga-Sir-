@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+       class MessageBlock {
+        constructor(){
+            this.msg = "Hellow Every One";
+        }
+
+        displayMsg (){
+            console.log("The Msg is - " + this.msg);
+        setTimeout(()=>{
+            console.log("The Msg is - " + this.msg); //( this.msg )invoked because of arrow function
+        } ,2000)
+
+        console.log("The Msg is - " + this.msg);
+        
+        
+        }
+       } 
+
+       var obj1 = new MessageBlock();
+       obj1.displayMsg();
+    </script>
+
+
+
+</body>
+</html>

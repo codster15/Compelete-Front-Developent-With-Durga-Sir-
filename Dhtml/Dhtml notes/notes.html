@@ -1,0 +1,737 @@
+. D H T M L . BASIC smallestucture OF DTML
+
+<script>
+  var a = 10;
+  var b = 20;
+  var result = a + b;
+  console.log(" " + result);
+
+  document.getElementById("sum").innerHTML = result;
+</script>
+
+=====================================================================================================================
+. showing data on html page
+
+<ul>
+  <li>student name is <span id="name"></span></li>
+  <li>Student Age is = <span id="age"></span></li>
+  <li>Student Gender is <span id="gender"></span></li>
+  <li>Student marks is = <span id="marks"> </span></li>
+  <li>Student total is = <span id="total"></span></li>
+  <li>Student average is = <span id="average"></span></li>
+  <li>Student grade is <span id="grade"></span></li>
+</ul>
+
+<script>
+  var sdetails = {
+    name: "Raj",
+    age: 21,
+    gender: "male",
+    marks: [23, 34, 67, 78],
+  };
+
+  var avgAndTotal = function () {
+    sdetails.Total = 0;
+    for (var i = 0; i < sdetails.marks.length; i++) {
+      sdetails.Total += sdetails.marks[i];
+    }
+
+    sdetails.avg = sdetails.Total / sdetails.marks.length;
+    studentgrade();
+  };
+
+  var studentgrade = function () {
+    if (sdetails.avg > 40) {
+      sdetails.grade = "you got passed";
+    } else {
+      sdetails.grade = "work hard try next time";
+    }
+  };
+
+  var showdata = function () {
+    avgAndTotal();
+    document.querySelector("#name").innerHTML = sdetails.name;
+    document.querySelector("#age").innerHTML = sdetails.age;
+    document.getElementById("gender").innerHTML = sdetails.gender;
+    document.getElementById("marks").innerHTML = sdetails.marks;
+    document.getElementById("total").innerHTML = sdetails.Total;
+    document.getElementById("average").innerHTML = sdetails.avg;
+    document.getElementById("grade").innerHTML =
+      "<b>" + sdetails.grade + "</b>";
+  };
+
+  showdata();
+</script>
+
+================================================================================================================
+
+<ul>
+  <li>Name - <span class="Name"></span></li>
+  <li>age - <span class="Age"></span></li>
+  <li>Gender - <span class="Gender"></span></li>
+  <li>Marks - <span class="Marks"></span></li>
+  <li>MarksTotal -<span class="Total"></span></li>
+</ul>
+
+<script>
+  var data = {
+    name: "Raj",
+    age: 23,
+    Gender: "Male",
+    marks: [12, 34, 56, 80],
+
+    marksCal: function () {
+      this.result = 0;
+
+      for (var i = 0; i < this.marks.length; i++) {
+        this.result = this.result + this.marks[i];
+      }
+
+      this.showdata();
+    },
+
+    showdata: function () {
+      document.querySelector(".Name").innerHTML = this.name;
+      document.querySelector(".Age").innerHTML = this.age;
+      document.querySelector(".Gender").innerHTML = this.Gender;
+      document.querySelector(".Marks").innerHTML = this.marks;
+      document.querySelector(".Total").innerHTML = this.result;
+    },
+  };
+
+  data.marksCal();
+</script>
+
+==============================================================================================================
+
+<ul>
+  <li>name <span class="name"></span></li>
+  <li>age <span class="age"></span></li>
+  <li>gender <span class="gender"></span></li>
+  <li>basicsal <span class="basicsal"></span></li>
+  <li>hra <span class="hra"></span></li>
+  <li>pf <span class="pf"></span></li>
+  <li>totalsal <span class="totalsal"></span></li>
+</ul>
+
+<script>
+  var Worker = {
+    employee: function () {
+      this.name = prompt("enter your name");
+      this.age = prompt("Enter age");
+      this.gender = prompt("enter Gender");
+      this.basicsal = prompt("Enter basic Salary");
+      this.basicsal = parseInt(this.basicsal);
+      this.empcalculation();
+    },
+
+    empcalculation: function () {
+      this.totalsal = 0;
+      this.hra = (10 * this.basicsal) / 100;
+      this.pf = (20 * this.basicsal) / 100;
+      this.totalsal = this.hra + this.pf + this.basicsal;
+    },
+
+    showEmpData: function () {
+      this.employee();
+      document.querySelector(".name").innerHTML = this.name;
+      document.querySelector(".age").innerHTML = this.age;
+      document.querySelector(".gender").innerHTML = this.gender;
+      document.querySelector(".basicsal").innerHTML = this.basicsal;
+      document.querySelector(".hra").innerHTML = this.hra;
+      document.querySelector(".pf").innerHTML = this.pf;
+      document.querySelector(".totalsal").innerHTML = this.totalsal;
+    },
+  };
+
+  Worker.showEmpData();
+</script>
+
+
+==========================================================================================================================
+
+
+.                            dynamic --> using tags with the help of javascript
+
+
+
+<body>
+  <div class="box"></div>
+
+  <script>
+    var tagname = prompt("enter the name to create ");
+    var colorname = prompt("enter color name");
+    var putTag = document.createElement(tagname);
+    putTag.innerHTML = "hello every one";
+    putTag.style.background = colorname;
+    document.querySelector(".box").append(putTag);
+  </script>
+</body>
+
+========================================================================================================
+
+
+.                                   static data web page 
+<style>
+  .title {
+    border: 1px solid;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: underline;
+  }
+
+  .product {
+    border: 1px solid;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: 60px;
+  }
+
+  img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .product {
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .product li {
+    list-style: none;
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .beforeprice {
+    font: bolder;
+    text-decoration: line-through;
+  }
+
+  .afterprice {
+    color: rgb(1, 190, 1);
+    font-weight: bolder;
+  }
+
+  ul {
+    padding: 0px;
+  }
+</style>
+</head>
+
+<body>
+<div class="title">Product Details</div>
+
+<div class="product">
+  <ul>
+        <li>Product name : Laptop</li>
+        <li>
+          Product Price : <span class="beforeprice"> 45000</span>
+          <span class="afterprice">35000/-</span>
+        </li>
+        <li>Manufacturer : Sony</li>
+        <li>Rating : 4.5/5</li>
+        <li>
+          <img src="file:///C:/Users/Deepu-PC/Downloads/laptop-removebg-preview.png" alt="" />
+        </li>
+  </ul>
+</div>
+</body>
+
+</html>
+
+
+===========================================================================================================
+.                                      Event Handling
+
+
+
+.                                    Static event handling
+
+
+
+
+<div onmouseover="showtext();"> click on me</div>
+
+    <div class="test"></div>
+
+    <script>
+
+        console.log("hello guys");
+
+        var showtext = ()=>{
+        var data = "I am here";
+        document.querySelector(".test").innerHTML = data;
+
+        }
+        console.log("Our job done");
+
+    </script>
+
+
+
+=========================================================================================================
+.                          Reading the data from the user
+
+
+
+
+.                       reading data and event handling
+
+
+
+<style>
+  ul {
+    border: 1px solid;
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  li {
+    list-style: none;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  .rblock{
+    display: none;
+  }
+</style>
+</head>
+<body>
+<form action="">
+  <ul>
+    <li>Enter the First Value <input type="text" id="fval" /></li>
+
+    <li>Enter the Second Value <input type="text" id="sval" /></li>
+
+    <li class="rblock">Result of values  = <span id="result"></span> </li>
+
+    <li>
+      <input type="button" value="Do Additon" onclick="input();"/>
+    </li>
+  </ul>
+</form>
+
+<script>
+  var input = () => {
+    var a = document.querySelector("#fval").value;
+    var b = document.querySelector("#sval").value;
+    a = parseInt(a);
+    b = parseInt(b);
+
+    var result = a + b;
+
+        
+    document.querySelector("#result").innerHTML = result;
+    document.querySelector(".rblock").style.display = "block";
+      
+    
+    
+                //clean up text
+
+        document.querySelector("#fval").value = '';
+        document.querySelector("#sval").value = '';
+    
+  };
+</script>
+
+====================================================================================================================
+
+
+.                         generate otp with the help of function
+
+
+    <script>
+
+      var generateOTP = ()=>{
+        var otpvalue = '';                      // generated value will be store in this string  by math. function
+        var randomno = Math.random()* 90;      //it will generate the value 1 to 90 between
+        randomno = Math.floor(randomno);       // it will collect only integer number not decimal
+        document.querySelector(".container"). innerHTML = randomno;
+      }
+
+    </script>
+
+===============================================================================================================
+
+
+.                       generate 5 digit otp
+
+
+<script>
+
+var generateOTP = ()=>{
+        var otpvalue = '';       
+
+        for( var i = 1; i <= 5; i++){     
+
+        var randomno = Math.random()* 10;    
+        randomno = Math.floor(randomno);      
+
+        otpvalue = otpvalue + randomno;
+
+        }
+        document.querySelector(".container"). innerHTML = randomno;
+      }
+
+</script>
+
+ 
+
+
+
+
+=================================================================================================================================
+
+
+.          Things what we have achieved is -:
+
+
+  .      - no reading the data from the prompt method
+
+  .      - no displaying the msg from the console
+
+
+
+
+=================================================================================================================
+
+
+
+.                                   Data Validation - show Alert msg
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box{
+            border: 2px solid;
+            width: 450px;
+            margin: 10px auto;
+           
+            
+           
+
+        }
+        ul{
+
+           margin-left:-35px;
+           width: 400px;
+
+               
+        }
+
+        li{
+            list-style: none;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            margin-left: 10px;
+
+        }
+        .l1{
+            text-align: center;
+            border: 0px;
+        }
+        .hide{
+            display: none;
+        }
+
+        .alert{
+            color: red;
+            font-size: 12px;
+            margin-left: 150px;
+            display: none;
+        }
+
+
+    </style>
+    
+<div class="box">
+     <ul>
+        <li> Entere the First Value <input type="text" id="fval" 
+            onkeypress="return validatedata(event);"><br><span class="alert">*enter only number</span></li>
+
+        <li>Enter the Second Value <input type="text" id="sval"> </li>
+
+        <li class="hide">Sum of number is = <span class="sumval"></span></li>
+
+        <li class="l1"><input type="button" value="Do Additon" name="" id="" onclick="inputValue();" ></li>
+     </ul>
+</div>
+
+<script>
+
+    
+       var  inputValue  = () => {
+            var firstValue = document.querySelector("#fval").value;
+            firstValue = parseInt(firstValue);
+
+            var secondValue = document.querySelector("#sval").value;
+            secondValue = parseInt(secondValue);
+
+            var sum =  firstValue + secondValue;
+            
+            document.querySelector(".hide").style.display ="block";
+            document.querySelector(".sumval").innerText = sum;
+
+         
+            console.log(sum);
+        }
+  
+var validatedata = (event) =>{
+    console.log("key got press");
+    console.log(event);
+
+            if(event.keyCode >= 48 && event.keyCode <= 57){
+                document.querySelector(".alert").style.display = "none";
+            return true;
+        }else{
+            document.querySelector(".alert").style.display = "block";
+            return false;
+        }
+
+}
+
+
+</script>
+
+</body>
+</html>
+
+
+==============================================================================================================================
+
+
+.                                             alert msg show -data Validation
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box{
+            border: 2px solid;
+            width: 450px;
+            margin: 10px auto;
+           
+            
+           
+
+        }
+        ul{
+
+           margin-left:-35px;
+           width: 400px;
+
+               
+        }
+
+        li{
+            list-style: none;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            margin-left: 10px;
+
+        }
+        .l1{
+            text-align: center;
+            border: 0px;
+        }
+        .hide{
+            display: none;
+        }
+
+        .alert{
+            color: red;
+            font-size: 12px;
+            margin-left: 150px;
+            display: none;
+        }
+
+        .alert2{
+            color: red;
+            font-size: 12px;
+            margin-left: 150px;
+            display: none;
+        }
+
+
+    </style>
+    
+<div class="box">
+     <ul>
+        <li> Entere the First Value <input type="text" id="fval" 
+            onkeypress="return validatedata(event, '#fvalalert');" placeholder="enter the number" maxlength="5"><br><span class="alert" id="fvalalert">*enter only number</span>
+        </li>
+
+
+
+
+        <li>Enter the Second Value <input type="text" id="sval"
+            onkeypress="return validatedata(event, '#svalalert');" placeholder="enter the number"  maxlength="5"><br><span class="alert2" id="svalalert">*enter only number</span>
+        </li>
+
+       
+       
+       
+        <li class="hide">Sum of number is = <span class="sumval"></span></li>
+
+        <li class="l1"><input type="button" value="Do Additon" name="" id="" onclick="inputValue();" ></li>
+     </ul>
+</div>
+
+<script>
+
+    
+       var  inputValue  = () => {
+                        var firstValue = document.querySelector("#fval").value;
+                        firstValue = parseInt(firstValue);
+
+                        var secondValue = document.querySelector("#sval").value;
+                        secondValue = parseInt(secondValue);
+
+                        var sum =  firstValue + secondValue;
+                        
+                        document.querySelector(".hide").style.display ="block";
+                        document.querySelector(".sumval").innerText = sum;
+
+                    
+                        console.log(sum);
+        }
+  
+        var validatedata = (event, elementId) =>{
+  
+
+                    if(event.keyCode >= 48 && event.keyCode <= 57){
+                        document.querySelector(elementId).style.display = "none";
+                    return true;
+                }else{
+                    document.querySelector(elementId).style.display = "block";
+                    return false;
+                }
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+============================================================================================================================================
+
+
+.                                                                        Event bubbling and event capturing
+
+
+<style>
+  .parent{
+      border: 1px solid;
+      margin: 20px;
+      padding: 20px;
+      background-color: red;
+      text-align: center;
+
+
+  }
+
+  .child{
+      border: 1px solid;
+      margin: 20px;
+      padding: 20px;
+      background-color: yellow;
+        text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="parent" >Parent
+  <div class="child">Child</div>
+</div>
+
+
+
+<!-- ....................................................................Event Bubbling ........................................ -->
+
+<script>
+  document.querySelector(".parent").addEventListener("click",()=>{
+      console.log("parent got clicked");
+  });
+
+  document.querySelector(".child").addEventListener("click",()=>{
+      console.log("child got clicked");
+  })
+
+</script>
+
+
+<!-- ......................................................................Event capturing........................................... -->
+
+<script>
+  document.querySelector(".parent").addEventListener("click",()=>{
+      console.log("parent got clicked");
+  },true);
+
+  document.querySelector(".child").addEventListener("click",()=>{
+      console.log("child got clicked");
+  }, true)
+
+</script>
+<!-- .........................................................................Difficult for me to understand this below code.................................. -->
+
+
+
+
+<script>
+  var isChildClicked = false;
+  document.querySelector(".parent").addEventListener("click",()=>{
+      if(isChildClicked){
+          isChildClicked = false;
+          return 
+      }
+      console.log("parent got clicked");
+  });
+
+  document.querySelector(".child").addEventListener("click",()=>{
+      isChildClicked = true;
+      console.log("child got clicked");
+  });
+
+</script>
+
+========================================================================================================================================================

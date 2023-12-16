@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            border: 1px solid;
+            margin: 30px ;
+            padding: 10px;
+            width: 400px;
+        }
+        li{
+            list-style: none;
+            border: 0px solid #ccc;
+            margin: 10px ;
+            padding: 5px ;
+        }
+        .lbutton{
+
+            text-align: center;
+
+        }
+        span{
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+         <ul>
+        <li>College Name : 
+            <input type="text" class="collegename">
+        </li>
+        <li>College Code : 
+            <input type="text" class="collegecode"> 
+        </li>
+        <li class="lbutton"><input type="button" value="Register College" onclick="readCollegedetails();"></li>
+    </ul>
+
+    <ul>
+        <li>Stuent Name : 
+            <input type="text" class="stuname">
+        </li>
+
+        <li>Student Age : 
+            <input type="text" class="stuage">
+        </li>
+
+        <li>
+            Student Gender : 
+            <input type="text" class="stugender">
+        </li>
+        <li class="lbutton"> <input type="button" value="Register" onclick="readStudentdetails();"></li>
+    </ul>
+    
+    <li ><span class="Succesful"></span></li>
+    
+    </div>
+
+   
+    
+
+<script>
+    
+var registeredStudentList = []; 
+
+//created school class
+class School {
+    constructor(schoolObj){
+        this.schoolname = schoolObj.schoolname;
+        this.schoolcode = schoolObj.schoolcode;
+    }
+    
+
+    
+    showSchoolDetails = function (){
+
+        console.log("School name - " + this.schoolname);
+        console.log("School Code - " + this.schoolcode);
+        
+    }
+}
+
+
+//created student class
+class student extends School{
+    constructor(schoolObj,studentObj){
+        super(schoolObj)
+        this.studentname =  studentObj.studentname;
+        this.studentage = studentObj.studentage;
+        this.studentgender =  studentObj.studentgender;
+        
+    }
+
+    showStudentDetails = function (){
+        console.log("Student name - " + this.studentname);
+        console.log("Student age - " + this.studentage);
+        console.log("STudent Gender - " + this.studentgender);
+        this.showSchoolDetails();
+        
+    }
+
+}
+
+    var schoolObj = {}
+
+
+    //created function inside function created an object to fetch the data which is given by the user
+ var readCollegedetails = function(){
+
+    schoolObj.schoolname = document.querySelector(".collegename").value;
+    schoolObj.schoolcode = document.querySelector(".collegecode").value;
+
+ }
+
+
+
+ //created function inside function created an object to fetch the data which is given by the user
+ var readStudentdetails = function(){
+    var studentObj = {}
+    studentObj.studentname = document.querySelector(".stuname").value;
+    studentObj.studentage =  document.querySelector(".stuage").value;
+    studentObj.studentgender = document.querySelector(".stugender").value;
+
+    var showcompeleteData = new student(schoolObj,studentObj);
+    showcompeleteData.showStudentDetails();
+    registeredStudentList.push(showcompeleteData);
+    console.log(registeredStudentList);
+    document.querySelector(".Succesful").innerHTML = "Student got Registered Sucessfully";
+
+}
+
+
+</script>
+
+
+</body>
+</html>

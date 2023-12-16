@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Bookdetails {
+        constructor() {
+          this.bookname = "City of dreams";
+          this.price = 4000;
+          this.author = "chetan";
+        }
+
+        book1() {
+          console.log("Alchemist");
+        }
+
+        book2() {
+          console.log("Atomic habit");
+        }
+      }
+
+      var klass = new Bookdetails(); // most important step is whole class got store --> klass .now with help of klass we cal call method inside it  .so now klass become the object
+      var copy = new Bookdetails();
+
+      klass.book1();
+      klass.book2();
+
+      console.log(klass);
+      console.log(copy);
+    </script>
+  </body>
+</html>

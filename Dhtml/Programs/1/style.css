@@ -1,0 +1,50 @@
+.title {
+    border: 1px solid;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: underline;
+  }
+
+  .product {
+    border: 1px solid;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: 60px;
+  }
+
+  img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .product {
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .product li {
+    list-style: none;
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .beforeprice {
+    font: bolder;
+    text-decoration: line-through;
+  }
+
+  .afterprice {
+    color: rgb(1, 190, 1);
+    font-weight: bolder;
+  }
+
+  ul {
+    padding: 0px;
+  }

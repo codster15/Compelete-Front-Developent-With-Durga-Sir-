@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color:#161616 ;
+        }
+        ul{
+            margin: 10px;
+            padding: 10px;
+            margin-left: 0px;
+
+           
+
+        }
+
+        li{
+            /* border: 1px solid rgb(31, 181, 240); */
+            margin: 10px;
+            padding: 10px;
+            width: 800px;
+            list-style: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+  
+        }
+
+            .button{
+                margin-left: 100px;
+               
+
+            }
+
+                .errorMsg{
+                    color: red;
+                    font-size: 12px;
+                    display: none;
+                   
+                }
+
+                input{
+                    height: 20px;
+                    width: 300px;
+                    color:orange;
+                    font-size: 21px;
+                    background-color: #161616;
+                    border: 0px solid black;
+                }
+                .inputbutton{
+                   border: 1px solid white;
+                    height: 50px;
+                    width: 150px;
+                    background-color: #0866ff;
+                    color: white;
+                    border-radius: 20px;
+                    font-size: 21px;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+
+                .ul2 li h1{
+                    color: white;
+                    display: inline;
+                    font-size: 20px;
+                }
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li> First Name : <input type="text" id="firstname" onkeypress="return validate(event , '#lerror');" maxlength="10" placeholder="Enter first name here">
+             <span class="errorMsg" id="lerror"> * Only characters allowed </span> </li>  
+
+
+
+
+
+        <li>Last Name : <input type="text" id="lastname" onkeypress="return validate(event, '#ferror');" maxlength="10" placeholder="Enter Last name here"> 
+             <span class="errorMsg" id="ferror"> * Only characters allowed </span></li>
+
+
+
+     <li>E-mail Address : <input type="email" id="email" onkeypress="return emailvalidate(event, '#emails');" maxlength="50"> 
+        <span class="errorMsg" id="emails"> * use @ , e-mail incorrect</span></li>
+
+
+
+        <li class="button"><input type="button" value="Submit" class="inputbutton" onclick="Showdata();"></li>
+    </ul>
+
+
+    <ul class="ul2">
+        <li>  Name : <h1 class="showMeName"> </h1> </li>
+        <li>E-Mail : <h1 class="showMeEmail"> </h1></li>
+
+    </ul>
+
+    <script>
+      
+
+        var validate = (event, elementId) => {
+
+          
+            if( event.keyCode >= 65 &&  event.keyCode <= 90 ){
+
+                document.querySelector(elementId).style.display = 'none';
+              
+                return true
+
+
+            } else if(event.keyCode >= 97 &&  event.keyCode <= 122){
+
+                document.querySelector(elementId).style.display = 'none';
+      
+                return true
+
+            }
+           
+            else if(  event.keyCode == 8 ||  event.keyCode == 32  ){
+                document.querySelector(elementId).style.display = 'none';
+                return true
+           
+        } else{
+            document.querySelector(elementId).style.display = 'block';
+            return false;
+        }
+
+
+
+    }    
+    
+    
+    var emailvalidate = ( event, elementId)=>{
+
+
+                    
+                if( event.keyCode >= 64 &&  event.keyCode <= 90 ){
+
+                        document.querySelector(elementId).style.display = 'none';
+                        return true;
+
+                        }else if(event.keyCode >= 97 &&  event.keyCode <= 122){
+
+                        document.querySelector(elementId).style.display = 'none';
+                        return true
+
+
+                        }else if(event.keyCode == 46){
+                        document.querySelector(elementId).style.display = 'none';
+                        return true
+
+                        }else{
+                        document.querySelector(elementId).style.display = 'block';
+                        return false;
+                        }
+
+    }
+
+                var Showdata = ()=>{
+
+                        var firstname = document.querySelector("#firstname").value;
+                        var lastname = document.querySelector("#lastname").value;
+                        var Email = document.querySelector("#email").value;
+
+                        var fullname = firstname + lastname;
+
+                    
+
+                        document.querySelector(".showMeName").innerHTML = fullname;
+                        
+                        document.querySelector(".showMeEmail").innerHTML = Email;
+
+                }
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //common way to filter
+      var no = [12, 34, 65, 78, 56, 34, 79];
+      var str = [];
+
+      for (var i = 0; i < no.length; i++) {
+        if (no[i] % 2 == 0) str.push(no[i]);
+      }
+
+      console.log(no);
+      console.log(str);
+
+      // new method comes with (Ecma -6 ) filter method
+      str = no.filter((value) => {
+        if (value % 2 == 0) return value; //return value will be store in str
+      });
+
+      console.log(str);
+    </script>
+  </body>
+</html>

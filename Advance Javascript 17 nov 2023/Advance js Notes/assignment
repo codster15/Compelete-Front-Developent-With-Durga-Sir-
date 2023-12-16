@@ -1,0 +1,11 @@
+
+Assignment 1
+
+create an object for bank account
+    savings acount 
+        account number
+        custumerNo
+        cus address
+        cus kyc
+        cust account balance
+        cust debts

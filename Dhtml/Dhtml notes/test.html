@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            border: 1px solid;
+            margin: 20px;
+            padding: 20px;
+            background-color: red;
+            text-align: center;
+
+
+        }
+
+        .child{
+            border: 1px solid;
+            margin: 20px;
+            padding: 20px;
+            background-color: yellow;
+              text-align: center;
+        }
+        .box{
+            border: 1px solid;
+            margin: 10px;
+            padding: 10px;
+            width: 400px;
+
+        }
+        .submit{
+            margin-left: 170px;
+        }
+        .show{
+            background-color: aqua;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <div class="parent" >Parent
+        <div class="child">Child</div>
+    </div>
+
+    <div class="box">
+
+    <p> first Value     <input type="text" id="inp1"><br></p>
+
+   <p>Second value  <input type="text" name="" id="inp2"></p> 
+
+   <h1 class="result"> Result <span class="show"></span> </h1>
+
+   <button class="submit" >submit</button>
+
+</div>
+    <script>
+      
+      var getdata = ()=>{
+        var firstval = document.querySelector("#inp1").value
+         firstval = parseInt(firstval);
+
+         var secondValue = document.querySelector("#inp2").value
+         secondValue = parseInt(secondValue);
+
+         var sum = firstval + secondValue;
+
+            console.log(sum);
+         document.querySelector(".show").innerHTML = sum;
+      }
+      
+      var submitdata = document.querySelector(".submit");
+
+      submitdata.addEventListener("click", getdata);
+
+      
+    </script>
+
+</body>
+</html>

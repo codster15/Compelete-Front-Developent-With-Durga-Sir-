@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <ul>
+        <li>First number : 
+            <input type="text" class="fvalue">
+        </li>
+        <li>
+            Second number : 
+            <input type="text" class="svalue">
+        </li>
+        <li>
+            <input type="button" value="Do Additon" onclick="doOperation('add');">
+            <input type="button" value="Do Subtraction"  onclick="doOperation('sub');">
+            <input type="button" value="Do Multiplication" onclick="doOperation('mul');">
+            <input type="button" value="Do Division" onclick="doOperation('div');">
+           
+        </li>
+        <li class="hideresult">
+            the <span class="showOpr"></span> of two number is   <span class="res"></span>
+        </li>
+    </ul>
+
+
+    <script src="app.js"></script>
+    <script src="MathmaticalOperationUtil.js"></script>
+</body>
+</html>

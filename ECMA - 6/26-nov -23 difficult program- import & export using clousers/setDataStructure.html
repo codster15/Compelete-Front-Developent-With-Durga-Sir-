@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Array data structure
+      var a = [23, 43, 65, 68, 98];
+      console.log(a);
+
+      // set Data structure
+      var temp = new Set();
+      temp.add(23).add(21).add(56).add(58).add(20); // repeated values will not consider
+
+      temp.add("i am string");
+      console.log(temp);
+      console.log(temp.add(12));
+      console.log(temp.clear);
+      console.log(temp.delete(21));
+      console.log(temp.has(56));
+      console.log(temp.size);
+      console.log(temp.values());
+
+      // for of control Structure
+      var sum = 0;
+
+      var newmap = new Set();
+      for (let value of temp) {
+        if (value % 2 == 0) {
+          sum = value;
+          newmap.add(value);
+        }
+      }
+      console.log(newmap);
+    </script>
+  </body>
+</html>

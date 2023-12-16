@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.color{
+    text-align: right;
+    margin-top:60px;
+    margin-right: 50px;
+}
+
+
+.showname{
+    width: 500px;
+    margin: 80px auto;
+    border: 5px solid;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+}
+
+
+    </style>
+</head>
+<body>
+
+        <div class="color">
+            Select Theme :
+            
+        <select name="" id="sel" onchange="setTheme()">
+            <option >green</option>
+            <option >red</option>
+            <option >blue</option>
+            <option >yellow</option>
+            <option >black</option>
+        </select>
+       </div>
+
+        <div class="main">
+
+            <input type="text" placeholder="Enter your name" id="uname">
+            <input type="button" value="submit" onclick="showdata()">
+        </div>
+
+        <div class="showname" id="fullname"> </div>
+
+
+
+
+        <script>
+
+            var user_name;
+            alert("Welocme to web page MR . " + sessionStorage.getItem("u_name"))
+            var showdata = ()=>{
+               
+                
+
+                 user_name = document.querySelector("#uname").value;
+                console.log(user_name);
+                sessionStorage.setItem("u_name" , user_name)
+              
+               
+            }    
+
+           
+
+            var showname = (uname)=>{
+                console.log(typeof(uname));
+                var storename = " Welcome to the Web Page Mr. " + sessionStorage.getItem("u_name");
+                console.log(storename);
+
+                    if(uname != ""){
+                       document.querySelector("#fullname").innerHTML = storename;
+                document.querySelector(".showname").style.display = "block";  
+                    }
+             
+            }
+
+            if(sessionStorage.getItem("u_name") != ""){
+                    showname(sessionStorage.getItem("u_name"))
+                }
+
+              
+            var setTheme = ()=>{
+                var colorname = document.querySelector("#sel").value;
+                console.log(colorname);
+                setBackgroundColor(colorname);
+                sessionStorage.setItem("color" , colorname)
+            }
+
+            var setBackgroundColor = (colorname)=>{
+                document.body.style.backgroundColor = colorname;
+            }
+
+            if(sessionStorage.getItem("color") != ""){
+                    setBackgroundColor(sessionStorage.getItem("color"))
+                }
+
+
+        </script>
+
+
+
+</body>
+
+
+</html>

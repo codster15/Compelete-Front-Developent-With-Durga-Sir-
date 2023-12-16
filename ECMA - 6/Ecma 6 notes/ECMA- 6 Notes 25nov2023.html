@@ -1,0 +1,508 @@
+
+
+
+.                               E C M A - 6 NOTES
+
+Lecture - 22-9-2022
+time - 50:00
+
+
+.                      VAR , LET , CONST --> DIFFERENCE BETWEEN 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <script>
+
+
+// using var keyword 
+// note - in side the block if var keyword is using we vcan access it ,but it var  keyword is used inside the module (Function,method ) we can't use var keyword because it will work as a private data 
+
+
+    var a = 10; 
+
+    if(a == 10){
+        var  b = 20;
+        console.log(b);
+    }
+
+    console.log(b);
+
+
+     function test  (){
+        var c = "Aman"
+     }
+
+     console.log(c);
+
+
+
+
+// using let keyword
+
+// note - inside the block (if,loop) or module (Function ,method) if let keyword is using we can not access it outside, because it will work as a private data 
+    let x = 10; 
+
+        if(x == 10){
+           let d = 20;
+            console.log(d);
+        }
+
+        console.log(d);
+
+
+        function test  (){
+           let e = "Aman"
+        }
+
+        console.log(e);
+
+
+
+
+// using const keyword
+//note --> once we define the const keyword and initialize the value we can not change the value using same const variable name 
+        const z = 2000;
+
+        z = 1000;
+
+
+
+ </script>
+
+</body>
+</html>
+
+
+================================================================================================================
+
+
+
+.                                   -->      Ecma 6 concept --> (String inter polization)
+
+
+
+
+Lecture - 22-9-2022
+time - 1:00:00
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+    var userDetails = {
+        name : "Raj",
+        age : 21,
+        gender : 'Male'
+    };
+
+    // old method of doing
+    var msg = " Username name is - " +userDetails.name + ",   userAge is -" + userDetails.age+ ",    UserGender is - " + userDetails.gender;
+    console.log(msg);
+
+
+
+
+    // Ecma 6 concept String inter polization
+    var msg1  = `Username name is -  ${userDetails.name }  userAge is -  ${userDetails.age}  UserGender is - ${userDetails.gender}`
+    console.log(msg1);
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+===============================================================================
+
+
+.                   Function Parameter with  -->  default value
+
+lecture 23-9
+time - start
+
+<script>
+
+    var sumOfData = function (a=20,b,c = 10){
+        var sum  = a + b + c;
+        console.log(sum);
+    } 
+
+    sumOfData(10,10)
+
+// default parameter pass program
+    var studentData = function(name ,age ,gender ,optforframework = false){
+        console.log("Student name - " + name);
+        console.log("Student age - " + age);
+        console.log("Student gender - " + gender);
+        console.log("Student optforframework - " + optforframework);
+        console.log("----------------")
+    }
+
+    studentData("Raj",21,"Male"  );
+    studentData("teena",24,"female" );
+    studentData("Kanran johar",41,"Transgender" );
+    studentData("jesssica",28,"female" , true);
+</script>
+
+
+
+============================================================================
+
+
+
+.                         -->  rest parameter or extended parameter
+
+lecture - 23-9
+time - 20:00
+
+<body>
+
+    <!-- Note   (...temp)  temp wil only collect which is not take by formal parameters-->     
+    
+
+    <script>
+
+        var sample = (a,b,c, ...temp)=>{
+            console.log(temp);
+            var result = a+b+c + temp[0];
+            console.log(result)
+        }
+
+        sample (12,20,50,10,67,89,90,)
+
+
+    </script>
+    
+</body>
+
+
+===============================================================================
+
+
+.                      Use of Arrow function to hold --> this keyword
+
+Note -  Arrow Function Holds the -->  ( this keyword) 
+
+
+lecture - 23-9
+time - 35:00
+ 
+<script>
+
+    class MessageBlock {
+     constructor(){
+         this.msg = "Hellow Every One";
+     }
+
+     displayMsg (){
+         console.log("The Msg is - " + this.msg);
+     setTimeout(()=>{
+         console.log("The Msg is - " + this.msg); //( this.msg )invoked because of arrow function
+     } ,2000)
+
+     console.log("The Msg is - " + this.msg);
+     
+     
+     }
+    } 
+
+    var obj1 = new MessageBlock();
+    obj1.displayMsg();
+ </script>
+
+
+=====================================================================
+
+
+.                 Exponential Operator ( * * )
+
+lecture - 23-9
+time - 36:00
+
+
+<script>
+
+    var result = 5**2;
+
+    console.log(result);
+
+</script>
+=======================================================================
+
+
+.                    For Each looing control structure 
+lecture 23-9
+time 45:00`
+
+
+
+
+<script>
+
+    //     old method
+    var marks = [23,11,45,67,87,90];
+    var total = 0;
+    for(var i = 0 ; i < marks.length ; i ++){
+        total += marks[i];
+        
+    }
+    console.log(total);
+
+
+
+
+    // new method when we have alterate all the values then recomanded
+    marks.forEach((value, index)=>{
+        total += value;
+
+        console.log(index);
+    })
+
+
+</script>
+
+
+=================================================================
+
+.                     ( find method) <-- in array
+
+lecture 23-9
+time 50:00`
+
+
+
+<script>
+    var data = [23,5,56,87,95,25]
+        
+    for( var i = 0; i < data.length ; i ++){
+
+        if(data[i] == 95){
+            console.log("found value");
+        }
+        }
+
+
+
+
+
+
+        //new method (Ecma-6) easy way to find value
+        
+
+        data.find((value)=>{
+            if(value == 25){
+                console.log("found value");
+
+            }
+           
+        })
+
+
+
+
+</script>
+
+
+============================================================================
+
+
+.                            FIlter method
+lecture 23-9
+time 58:00
+
+
+<script>
+    //common way to filter
+    var no = [12, 34, 65, 78, 56, 34, 79];
+    var str = [];
+
+    for (var i = 0; i < no.length; i++) {
+      if (no[i] % 2 == 0) str.push(no[i]);
+    }
+
+    console.log(no);
+    console.log(str);
+
+    // new method comes with (Ecma -6 ) filter method
+    str = no.filter((value) => {
+      if (value % 2 == 0)
+      
+      return value; //return value will be store in str
+    });
+
+    console.log(str);
+  </script>
+  ======================================================================
+
+
+  .                                -->               Map method (MUltiply)
+
+  lecture 23-9
+  time 1:02:00
+
+  <script>
+    //old process
+    var data = [23, 45, 87, 93, 24, 14];
+    var temp = [];
+
+    // for(var i = 0 ; i < data.length; i ++ ){
+
+    //     var result = data[i] * 2;
+    //     temp.push(result);
+    // }
+
+    // console.log(data);
+    // console.log(temp);
+
+    var temp = data.map((value) => {
+      return value * 2;
+    });
+
+    console.log(data);
+    console.log(temp);
+  </script>
+
+
+interview question -
+
+what do you mean by
+
+includes
+map
+filter
+find
+findIndex
+
+
+
+
+
+motivation 
+lect- 23-9
+time - 1:07:00
+===============================================================================================
+
+
+.                      --->  (Set) Data Structure
+
+
+
+
+
+
+
+
+note - for of -->loop used in set and map data structure . Set data structure is same as Array data structure 
+- --> repeated values will not considered
+
+
+
+lec -  24-9
+time- last 
+<script>
+    // Array data structure
+    var a = [23, 43, 65, 68, 98];
+    console.log(a);
+
+    // set Data structure
+    var temp = new Set();
+    temp.add(23).add(21).add(56).add(58).add(20); // repeated values will not consider
+
+    temp.add("i am string");
+    console.log(temp);
+    console.log(temp.add(12));
+    console.log(temp.clear);
+    console.log(temp.delete(21));
+    console.log(temp.has(56));
+    console.log(temp.size);
+    console.log(temp.values());
+
+    // for of control Structure
+    var sum = 0;
+
+    var newmap = new Set();
+    for (let value of temp) {
+      if (value % 2 == 0) {
+        sum = value;
+        newmap.add(value);
+      }
+    }
+    console.log(newmap);
+  </script>
+
+
+========================================================================================
+
+
+
+
+.                               --> Map data structure
+
+Note -
+ Map data structure is same like the json object . some features of map data structures are it comes with some predefined methods ex(set() , get() entries() , clear() , delete()....more)
+--> supportes the (for in) loop
+
+
+
+<script>
+
+
+    var m1 = new Map();
+    m1.set("name " , "Aman");
+    m1.set("age" , "21");
+    m1.set("Gender ", "Male")
+    m1.set("Location" , "Assam");
+
+    // console.log(m1);
+
+    //supported prefined Methods in Map data structure
+
+    // m1.delete("Gender" , "Male");
+    // console.log(m1);
+    // console.log(m1.size);
+    // console.log(m1.entries());
+
+    for(let [key , value] of m1.entries()){
+        console.log(key)
+        console.log(value)
+    }
+
+
+</script>
+
+
+
+=======================================================================================================================
+
+topics still pending below--> 
+
+        promises 
+        async and awit 
+
+these topics will be covered after html 5 and css 3
+
+===================================================================================

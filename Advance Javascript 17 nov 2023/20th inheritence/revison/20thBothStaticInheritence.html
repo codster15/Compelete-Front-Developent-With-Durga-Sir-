@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // inheritence between the two static objects---------------------
+
+      parent = {
+        fathername: "Raj Mittal",
+        MotherName: "teena Mittal",
+        location: "hydrabad",
+      };
+
+      child = {
+        childName: "John",
+        age: 17,
+        gender: "Male",
+        Education: "Highschool",
+
+        showData() {
+          child.__proto__ = parent;
+          console.log(
+            "inheritence between the two static objects =============================="
+          );
+          console.log("                  ");
+          console.log("                  ");
+
+          console.log("Parent Details are inherited from the parent object  ");
+          console.log("Faters's name - " + this.fathername);
+          console.log("Mother's name - " + this.MotherName);
+          console.log("Location - " + this.location);
+          console.log("                  ");
+          console.log("child data from child object");
+
+          console.log("child's name - " + this.childName);
+          console.log("Age - " + this.age);
+          console.log("Gender - " + this.gender);
+          console.log("Education - " + this.Education);
+        },
+      };
+
+      child.showData();
+    </script>
+  </body>
+</html>

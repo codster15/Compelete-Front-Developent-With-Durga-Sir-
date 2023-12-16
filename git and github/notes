@@ -1,0 +1,26 @@
+
+
+=== gti process
+
+git init - initiate GIT process
+
+git status - untracked files 
+
+===================================================
+
+# Make changes to files
+
+# Check the status to see what has changed
+    -git status
+
+ # Stage the changes
+     -git add .
+
+# Commit the changes
+     git commit -m "Made some updates"
+
+# Push changes to the remote repository (if applicable)
+    git push origin main
+
+
+++

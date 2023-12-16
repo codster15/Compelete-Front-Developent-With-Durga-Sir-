@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      ul {
+        border: 1px solid;
+        width: 400px;
+        margin: 10px auto;
+        padding: 10px;
+      }
+
+      li {
+        list-style: none;
+        margin: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .rblock{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <ul>
+        <li>Enter the First Value <input type="text" id="fval" /></li>
+
+        <li>Enter the Second Value <input type="text" id="sval" /></li>
+
+        <li class="rblock">Result of values  = <span id="result"></span> </li>
+
+        <li>
+          <input type="button" value="Do Additon" onclick="input();"/>
+        </li>
+      </ul>
+    </form>
+
+    <script>
+      var input = () => {
+        var a = document.querySelector("#fval").value;
+        var b = document.querySelector("#sval").value;
+        a = parseInt(a);
+        b = parseInt(b);
+
+        var result = a + b;
+
+            
+        document.querySelector("#result").innerHTML = result;
+        document.querySelector(".rblock").style.display = "block";
+          
+        
+        
+                    //clean up text
+    
+            document.querySelector("#fval").value = '';
+            document.querySelector("#sval").value = '';
+        
+      };
+    </script>
+  </body>
+</html>

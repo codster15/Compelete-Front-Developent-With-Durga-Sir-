@@ -1,0 +1,1099 @@
+========================passing parameters while calling a function=================
+
+<script>
+    function getdata (){
+        var m1 = prompt();
+        var m2= prompt();
+        console.log("i m holding m1,m2 data");
+        calculation(m1, m2);   //get total(m1=10, m2=20) actual parameters
+    }
+    function calculation(p1, p2){  //(p1=10, p2=20)
+        p1 = parseInt(p1)
+        p2 = parseInt(p2)
+        var result = 0;
+        console.log(typeof(result))
+         result = p1 + p2;
+      
+        console.log(result);
+        console.log(typeof(result))
+        
+    }
+
+    calculation()
+    //getdata();
+    
+</script>
+=============================================================================
+<script>
+    function getdata() {
+      var m1 = prompt();
+      m1 = parseInt(m1);
+
+      var m2 = prompt();
+      m2 = parseInt(m2);
+
+      console.log("i m holding m1,m2 data");
+      calculation(m1, m2); //get total(m1=10, m2=20) actual parameters
+    }
+   
+   
+   
+    function calculation(m1, m2) {
+      //(m1=10, m2=20)
+
+    
+      var result = m1 + m2;
+
+      console.log(result);
+    }
+
+    
+    getdata();
+  </script>
+
+========================================================================
+
+
+<script>
+  function studentdetails() {
+    var ename, age, sub1, sub2;
+    ename = prompt("enter your name");
+
+    age = prompt("enter your age");
+
+    sub1 = prompt("marks sub 1");
+    sub1 = parseInt(sub1);
+
+    sub2 = prompt("marks sub 2");
+    sub2 = parseInt(sub2);
+
+    sum = calculation(sub1,sub2 );
+    a = displaystudentdata(ename, age, sum);
+    console.log("get value of a = " + a);
+    
+  }
+
+  function calculation(sub1, sub2, a) {
+    var sum = sub1 + sub2;
+   
+     return sum;
+  }
+
+  function displaystudentdata(ename, age,sum) {
+    var a = "i am a";
+    var gender = "male";
+    console.log("name =  " + ename);
+    console.log("age = " + age);
+    console.log("gender =  " + gender);
+     console.log("sum marks is = " + sum);
+     return a;
+  }
+
+  studentdetails();
+  
+
+</script>
+
+========================================================================================================================================
+
+------------------------------------------- three ways of defining function
+
+
+    1st way
+
+
+   <script>
+        
+        function addvalues(){
+                    
+                                        
+       }    
+                        
+  </script>
+
+  =================================================================================================================================
+
+  2nd way of defining
+
+  <script>
+        
+    var addvalues = function (){
+
+
+     }
+
+</script>
+
+==============================================================================================================================
+
+                recommended way
+ 
+
+<script>
+        
+  var addvalues = () => {
+
+
+   }
+
+</script>
+
+
+
+
+==================================================================================================================================
+
+--------------------------------------------------functions----------------------------------------------------------
+ 
+ 1- now we under stand the function
+
+ 2- what is the use of function.
+
+ 3- what are the differnet ways to declare the  function.
+
+ 4- global data , local data.
+
+ 5- what do mean by passsing data 
+
+ 6- what do mean by returning value
+
+ 7-what are the limitations when we returning value.
+
+ ====================================================================================================================================
+
+
+.                                                     Arrays concept
+
+two ways to declate 
+
+
+
+=======================================================================================
+
+.                          ARGUMENTS KEYWORD
+
+
+
+
+
+<script>
+  var addvalues = function () {  //creating function
+
+    console.log(arguments);   //pasing arguments
+    var result = 0;
+
+    for (var i = 0; i < arguments.length; i++) {   //loop to get passing arugemnts values
+
+      result = result + arguments[i];  // sum of array result
+
+    }
+
+    return result;   //return result
+  }
+
+  var result = addvalues(12, 23, 14, 5, 7, 67, 98);  //passing values for the loop
+  console.log("Sum of array = " + result); //print the sum of array elements.
+
+
+  var result = addvalues(12, 32,13,56, 67, 98);
+  console.log("Sum of array = " + result);
+
+
+  var result = addvalues(12,33,7,899,12, 23, 14, 5, 7, 67, 98);
+  console.log("Sum of array = " + result);
+</script>
+
+
+
+
+
+
+===========================================================================================================================
+
+.                                                             REST parameters
+
+
+.                          passing parameter using arguements keyword ==> with arrow KEYWORD
+
+
+
+
+<script>
+
+  var showData =  (... test)=>{
+
+      console.log(test);  //different way of using arguments in arrow function
+      var result = 0;
+      for(var i = 0; i < test.length; i++){
+        
+         result = result + test[i];
+        
+      }
+      return result;
+  }
+
+      var sum = showData(23,12,23,34,45)
+      console.log("total sum is = " + sum);
+
+      var sum = showData(23,12,23,34,45,43,65,67,87)
+      console.log("total sum is = " + sum);
+
+      var sum = showData(23,12)
+      console.log("total sum is = " + sum);
+
+      var sum = showData(23,12,23,34,45,237,78,87,98,89,90,)
+      console.log("total sum is = " + sum);
+
+</script>
+
+
+
+
+=================================================================================================
+
+.                                         javascrpit - date time
+
+
+octuber, 05th 2023
+
+  tue, oct 5th 2023
+
+  Tuesday, Octuber 5th 2023
+
+  05/10/2023
+
+  05th oct, 2023
+
+  05th oct, 2023 09:30:10
+
+   oct/05/2023 10:20
+
+   30-Octuber-2023 20:30:10
+
+</head>
+    <script>
+    
+      var  date = new Date();
+      console.log(date);
+
+      var dateformat = ['jan', 'feb', 'mar', 'april', 'may', 'june', 'july', 'aug', 'sept', 'octuber', 'november', 'december'] 
+
+        
+      var dateformat2 = ['jan', 'feb', 'mar', 'april', 'may', 'june', 'july', 'aug', 'sept', 'oct', 'november', 'december'] 
+
+      var day = ['sun', 'mon', 'tue', 'thru', 'fri', 'sat', 'sun'];
+      var day1 = ['sun', 'mon', 'tue', 'thrusday', 'friday', 'sat', 'sun'];
+
+      var month = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+
+      var format1 = dateformat[date.getMonth()] + ", " + date.getDate()+ "th " + date.getFullYear();
+      console.log(format1);
+
+
+      var format2 = day [date.getDay()]  + " " +  dateformat2[date.getMonth()] + ", " + date.getDate()+ "th " + date.getFullYear();
+      console.log(format2);
+
+
+      var format3= day1 [date.getDay()]  + " " +  dateformat[date.getMonth()] + ", " + date.getDate()+ "th " + date.getFullYear();
+      console.log(format3);
+
+      var format4 = date.getDate() +"/"+ month[date.getMonth()] + "/" +date.getFullYear();
+      console.log(format4);
+
+      var format6 =  date.getDate()+ "th "+ day[date.getDay()]
+        
+    </script>
+
+
+
+.                                             Tuesday , Octuber 18th 2023
+
+
+
+
+
+<script>
+
+  var date = new Date();
+
+var month = ['jan','feb','march','april','may','june','july','auguest','september','Octuber','november' ,'december'];
+var monthindex = date.getMonth();
+
+var day1 = ['sun', 'mon' ,'Tuesday','wednesday'];
+
+var dayIndex = date.getDay();
+console.log(day1[dayIndex -1] + " , "+ month[monthindex] + " " + date.getDate()+"th " + date.getFullYear());
+
+</script>
+====================================================================================
+
+.                             project- mockup
+
+login
+
+signup     
+
+forget password
+
+explore the list of products
+
+indivual product
+
+========================================================================================
+
+.                              javascript -  setTimeout and set interval
+
+
+
+
+-one way of wititng setTimeout
+
+<script>
+  var show = ()=> {
+    console.log("hey i'm here");
+  }
+ console.log("Where are you");
+  setTimeout(show, 5000);
+ </script>
+
+ 
+
+
+2nd way or wititng setTimeout
+
+ <script>
+  console.log("hey are you there");
+  setTimeout(() =>{  //passing the  function inside the setTimeOut as parameter 
+      console.log("yes come here ")
+  },5000)
+</script>
+
+
+
+
+.                                 setInterval
+
+
+<script>
+   
+  console.log("hey are you there");
+
+  setInterval(()=>{
+
+      console.log("look at me here")
+      console.log("yes come here ");
+  },5000)
+</script>
+
+
+
+
+============================================================================================================================
+
+ 
+.                                                      J S O N
+
+
+
+
+
+
+.                                           what we have learn in json object
+
+
+
+
+
+ 
+ 
+ 
+ how do we create and json object
+
+ how do we insert the data dynamically
+
+ how do we create DYNAMIC json object
+
+ how do we access the data from the json object 
+
+ complexity of the json object
+
+ alterating of the json object
+
+ adding the dynamic value of the json object
+
+deleting the value from the json object
+
+
+
+
+
+
+
+
+
+.                                             Json smallestucture
+
+var a = {
+  
+  "key" : value,
+  "key2" : value2,
+  "key3" : value3
+};
+
+
+
+<script>
+
+  var studendentdetails = {
+        "userName" : "Raj",
+        "age" : 21,
+        "Gender" : "male",
+        "Marks" : [23,43,12],
+        "total" : 0,
+        "Avg" : 0,
+
+  };
+     
+  
+</script>
+
+
+
+
+.                                             example
+
+
+
+<script>
+
+  var details = {
+        "userName" : "Raj",
+        "age" : 21,
+        "Gender" : "male",
+        "Marks" : [23,43,15],
+        "total" : 0,
+        "Avg" : 0,
+
+  };
+    var result = 0;
+        for(var i = 0; i < details.Marks.length; i++ ){
+              result = result + details.Marks[i];
+           
+        }
+        console.log(result);
+        
+        var avg = result / details.Marks.length;
+        console.log("avg " + avg);
+</script>
+
+
+
+
+.                                       JSON DYNAMIC ALLOCATIONS
+
+
+
+
+
+
+<script>
+
+  var students = {};
+      students.name = prompt("enter user name");
+      students.age = prompt("enter your age");
+      students.gender = prompt("enter your gender");
+  console.log(students);
+
+
+
+</script>
+
+
+.                                           JSON DYNAMIC ALLOCATIONS
+
+
+
+
+
+<script>
+
+  var students = {};
+ students.name = prompt("enter user name");
+ students.age = prompt("enter your age");
+ students.gender = prompt("enter your gender");
+ console.log(students);
+ students.marks = [] ;
+
+ for(var i = 0; i < 5; i++){
+
+     students.marks[i] = prompt("enter marks here = " + i);
+     students.marks[i] = parseInt(students.marks[i]);
+
+   }
+ 
+   students.total = 0 ;
+
+   for( var i = 0; i < students.marks.length; i++){
+
+       students.total = students.total + students.marks[i];
+
+   }
+
+     students.avg = students.total / students.marks.length;
+
+     console.log(students);
+   
+</script>
+
+
+
+===============================================================================================================
+
+
+
+
+.                                    for in loop Control smallestucture
+
+
+
+
+<script>
+
+  var details =  {
+
+  "name" : "Raj",
+  "age" : 21,
+  "gender" : "male",
+  "location" : "hydrabad"
+
+  }
+
+ for( var tempdata in details){
+    console.log(tempdata);    
+ }
+
+ console.log(details.gender);
+
+</script>  
+
+
+
+
+===============================================================================================
+
+.                                  IMPORTANT - JSON
+
+
+
+
+<script>
+  
+  var emp = {
+ 
+   "basicsal": 2000,
+   "Name" : 'teena'
+ 
+  }
+ 
+  emp.Name  -> 'teena'
+ 
+  emp['Name'] -> 'teena'
+ 
+ 
+ ---------------------------------------------------------
+ 
+ 
+  var sample = 'empName';
+ 
+  emp.sample -> undefined
+ 
+ emp[sample] -> emp['empName'] -> Teena 
+ 
+  </script>
+
+
+===========================================================================================
+
+
+
+<script>
+
+  var details =  {
+
+  "name" : "Raj",
+  "age" : 21,
+  "gender" : "male",
+  "location" : "hydrabad"
+
+  }
+
+ for( var tempdata in details){
+    console.log(tempdata); 
+     console.log(details.tempdata); // it will throw undifined because .tempdata is acting as a variable
+     console.log(details[tempdata]);   // here it will throw the values of keys which is holding [tempdata]
+
+ }
+
+
+</script>  
+
+
+=======================================================================================
+
+
+.                                                  json
+
+<script>
+
+  var details =  {
+
+  "name" : "Raj",
+  "age" : 21,
+  "gender" : "male",
+  "location" : "hydrabad"
+
+  }
+
+ for( var tempdata in details){
+    console.log(tempdata); 
+     console.log(details.tempdata); // it will throw undifined because .tempdata is acting as a variable
+     console.log(details[tempdata]);   // here it will throw the values of keys which is holding [tempdata]
+
+ }
+
+
+</script>  
+
+
+
+=====================================================================================================
+
+<script>
+  var details = {
+    name: "Raj",
+    age: 21,
+    gender: "male",
+    location: "hydrabad",
+  };
+
+  for (var tempdata in details) {
+    console.log(tempdata + " = " + details[tempdata]);
+  }
+</script>
+=============================================================================================================
+
+.                                                 COMPLEX JSON OBJECT
+
+.                                 How to store data in JSON Object
+
+
+  ContactDetails:
+      first name
+      last name
+      phone no 
+         office   
+            single number
+         personal
+             multipal number
+             
+     address  
+        office
+            state nsame 
+             pincode
+             country details 
+                 code 
+                 name 
+      home
+         smallesteetName
+         dno
+         stateinfo
+            stateName
+            stateCode
+            
+            
+    emailId
+        office
+        personal -> multiple
+        
+        gender
+        Birthday
+           year
+           month
+           day
+        socialID
+            linkedin
+            twitter
+            facebook  
+
+
+.                          SOLUTION BELOW 
+
+
+
+
+
+
+<script>
+  var contactdetails = {
+    firstName : "Raj",
+    last      : "sisodia",
+    nick      :  'rajua',
+
+    phoneNo: {
+      officeNo: '0522-3487485',
+      personalNo: ["6457362648", "9475657438", "7465535373"],
+    },
+
+    address: {
+      office: {
+        stateName: "Uttarpradesh",
+        pincode: 226021,
+        countryDetails:{
+          code : '+91',
+          name : 'INDIA'
+        
+        },
+        city: "Noida",
+      },
+
+      home: {
+        smallesteetName: "jankipuram",
+        houseNo: "Plotno-9",
+        state: "uttarPradesh",
+        stateCode: 0522,
+      },
+    },
+
+    emailId: {
+      office: "abc@gmail.com",
+      personal: ["bca@gmail.com", "csa@gamil.com", "hjda@gmail.com"],
+    },
+
+    gender: "Male",
+
+    Birthday: {
+      month : 'auguest',
+      year  : 1998,
+      day   : 16
+    },
+    
+    profile : 'smart',
+
+    langugeSpeak : ['hindi', 'english','spanish'],
+
+    socialID : {
+      linkedin : 'qwe@gmail.com',
+      twitter  : 'wdec@gmail.comn',
+      facbook  : 'sdfsd@gmail..com',
+
+    }
+  };
+
+    console.log(contactdetails.nick);
+    console.log(contactdetails.phoneNo.officeNo);
+ console.log(contactdetails.phoneNo.personalNo[2]);
+ console.log(contactdetails.address.office.stateName);
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+    .                                         difficult part- recursive
+
+
+
+ var showDetailsFromObject = (contactdetails) => {
+        for (var temp in contactdetails) {
+          if (typeof contactdetails[temp] == "object") {
+            showDetailsFromObject(contactdetails[temp]);   ////////  difficult part- recursive
+          } else {
+            console.log(temp);
+            console.log(contactdetails[temp]);
+          }
+        }
+      };
+
+
+
+      showDetailsFromObject(contactdetails);
+
+
+
+
+
+
+</script>
+
+
+===============================================================================================================================
+
+
+.                                                Pre-difined keyword ---> delete  in json 
+
+
+
+<script>
+  var sdata = {
+   name : 'RAj',
+   age  : 21,
+   gender : 'male',
+   location : 'hydrabad'
+  } 
+
+   delete sdata.gender; // delete predifined keyword is use to delete any perticuler from the json object
+  console.log(sdata);
+
+</script>
+
+
+
+================================================================================================================================
+
+<script>
+
+var details = {
+
+  country: "INDIA",
+
+  data: {
+    name: "Raj",
+    age: 21,
+    gender: "male",
+  },
+  work: "done",
+};
+
+
+  var Sdetails = (details)=>{
+
+    for(info in details){
+
+        if(typeof(details[info]) == "object"){
+          Sdetails(details[info]);
+        
+        } else {
+
+          console.log(info);
+          console.log(details[info]);
+        }
+
+  }
+}
+ Sdetails(details)
+
+  console.log("hey may name is = " + details.data.name);
+
+
+  </script>
+
+
+====================================================================================================================
+
+
+
+
+.                                      demonsmallestating J S O N object with methods
+
+
+
+name age gender. JSON Marks Avg total garde show student details
+
+
+name age gender. JSON Marks Avg total garde show student details
+
+<script>
+  var sdetails = {
+    name: "Raj",
+    age: 21,
+    gender: "male",
+    marks: [23, 34, 67, 78],
+  };
+
+  var avgAndTotal = function () {
+    sdetails.Total = 0;
+    for (var i = 0; i < sdetails.marks.length; i++) {
+      sdetails.Total += sdetails.marks[i];
+    }
+
+    sdetails.avg = sdetails.Total / sdetails.marks.length;
+    studentgrade();
+  };
+
+  var studentgrade = function () {
+    if (sdetails.avg > 40) {
+      sdetails.grade = "you got passed";
+    } else {
+      sdetails.grade = "work hard try next time";
+    }
+  };
+
+  var showdata = function () {
+    avgAndTotal();
+    console.log("student name " + sdetails.name);
+    console.log("student age " + sdetails.age);
+    console.log("student gender " + sdetails.gender);
+    console.log("student marks " + sdetails.marsks);
+    console.log("student total " + sdetails.Total);
+    console.log("student avg " + sdetails.avg);
+    console.log("student grade " + sdetails.grade);
+  };
+
+  showdata();
+</script>
+.  here we are declaring function outside of the json object biggest disadvantage is we can directly access the data because function declared outside of the json object
+
+
+
+
+
+
+
+
+
+================================================================================================================
+
+
+.                           Function defining in 3 ways inside json object
+
+
+
+
+
+
+<script>
+
+var studentdetails = {
+
+    getTotlaAndAvg : function () {           //one way to define the function
+
+    },
+
+    getTotlaAndAvg : () => {             //second eway to define the function
+
+
+    },
+
+    getTotlaAndAvg(){                  // third way to define the function which is in ECMA 6
+
+      
+    }
+
+
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===================================================================================================
+
+.                                 object oreinted    ==>    function inside J S O N  object
+
+
+<script>
+  var sdetails = {
+    name: "Raj",
+    age: 21,
+    gender: "male",
+    marks: [23, 34, 67, 78],
+
+    avgAndTotal: function () {
+      sdetails.Total = 0;
+      for (var i = 0; i < sdetails.marks.length; i++) {
+        sdetails.Total += sdetails.marks[i];
+      }
+
+      sdetails.avg = sdetails.Total / sdetails.marks.length;
+      this.studentgrade();
+    },
+
+    studentgrade: function () {
+      if (sdetails.avg > 40) {
+        sdetails.grade = "you got passed";
+      } else {
+        sdetails.grade = "work hard try next time";
+      }
+    },
+
+    showdata: function () {
+     sdetails.avgAndTotal();
+      console.log("student name " + this.name);
+      console.log("student age " + sdetails.age);
+      console.log("student gender " + sdetails.gender);
+      console.log("student marks " + sdetails.marsks);
+      console.log("student total " + sdetails.Total);
+      console.log("student avg " + sdetails.avg);
+      console.log("student grade " + sdetails.grade);
+    },
+  };
+
+  sdetails.showdata();
+</script>
+
+
+
+=======================================================================================================================
+
+
+. In Future all we do
+
+<script>
+  var sdetails = {
+    name: "test",
+    displaydata: function () {
+
+    },
+
+    showData: () => {
+
+    },
+
+    sample() { // from ---> ecma - 6 latest 
+
+    },
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      
+    </script>
+

@@ -1,0 +1,44 @@
+.head{
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.main{
+    border: 1px solid;
+    position: absolute;
+    left: 15px;
+    top: 60px;
+    right: 15px;
+    bottom: 10px;
+    list-style: none;
+}
+li{
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+img{
+    width: 250px;
+    height: 120px;
+}
+.main
+{
+    width: 300px;
+    height: 400px;
+}
+.ul1{
+  padding: 0px;
+    list-style: none;
+
+}
+.beforep{
+    text-decoration: line-through;
+
+}
+
+.afterp{
+font-weight: bold;
+color: rgb(0, 185, 0);
+}

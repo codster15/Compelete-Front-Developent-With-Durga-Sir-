@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <script>
+
+
+// using var keyword 
+// note - in side the block if var keyword is using we vcan access it ,but it var  keyword is used inside the module (Function,method ) we can't use var keyword because it will work as a private data 
+
+
+    var a = 10; 
+
+    if(a == 10){
+        var  b = 20;
+        console.log(b);
+    }
+
+    console.log(b);
+
+
+     function test  (){
+        var c = "Aman"
+     }
+
+     console.log(c);
+
+
+
+
+// using let keyword
+
+// note - inside the block (if,loop) or module (Function ,method) if let keyword is using we can not access it outside, because it will work as a private data 
+    let x = 10; 
+
+        if(x == 10){
+           let d = 20;
+            console.log(d);
+        }
+
+        console.log(d);
+
+
+        function test  (){
+           let e = "Aman"
+        }
+
+        console.log(e);
+
+
+
+
+// using const keyword
+//note --> once we define the const keyword and initialize the value we can not change the value using same const variable name 
+        const z = 2000;
+
+        z = 1000;
+
+
+
+ </script>
+
+</body>
+</html>

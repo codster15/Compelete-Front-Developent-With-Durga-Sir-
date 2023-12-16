@@ -1,0 +1,304 @@
+
+
+
+
+
+
+.                            WELCOME TO -->   J Q U E R Y
+
+
+. THIS IS THE PURE  JAVASCRIPT CODE DOM MANIPULATION
+
+
+
+<style>
+    .container{
+        border: 5px solid;
+        margin: 20px;
+        padding: 10px;
+        height: 30px;
+        width: 500px;
+
+    }
+
+    .msg{
+        border:5px solid black;
+        text-align: center;
+        color: yellow;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 10px;
+
+    }  
+
+    .background{
+        border: 5px solid orangered;
+        background-color: black;
+    }
+</style>
+</head>
+<body>
+
+<div>
+
+<div class="" id="divMain"></div>
+
+<input type="button" value="Create block" id="block" >
+<input type="button" value="Get Msg" id="msg" >
+<input type="button" value="Get Color" id="color" >
+</div>
+
+<script>
+
+
+var storeBlock = document.querySelector("#block");
+var storeMsg = document.querySelector("#msg");
+var storeColor = document.querySelector("#color");
+
+
+var blockFunction = ()=>{
+document.querySelector("#divMain").setAttribute("class" , "container");
+console.log("blockFunction")
+}
+
+
+var msgfunction = ()=>{
+    blockFunction();
+     var firstclass = document.querySelector("#divMain").getAttribute("class");
+
+        firstclass = firstclass + " msg" ; // important space is mandatory while defining class(" msg")
+        
+      
+
+
+    var msg = "Hellow Every one , Welcome to Jquery API";
+    document.querySelector("#divMain").innerHTML = msg;
+    document.querySelector("#divMain").setAttribute("class" , firstclass);
+    console.log("msgfunction")
+
+    return firstclass
+}
+
+
+
+
+var colorFunction =  ()=>{
+    blockFunction()
+    msgfunction()
+    var class1 = msgfunction()
+    var lastclass = class1 + " background";  // most important (" background")--> space before background 
+
+document.querySelector("#divMain").setAttribute("class" , lastclass);
+console.log("i am color button ........ clicked")
+console.log("msgfunction")
+}
+
+
+storeBlock.addEventListener("click" ,blockFunction )
+storeMsg.addEventListener("click" , msgfunction)
+storeColor.addEventListener("click" , colorFunction )
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!---------------------------------HOW WE CAN SIMPLYFIY USING JQUERY -------------- -->
+
+
+
+here the code -with the help of Jquery
+
+
+
+
+==========================================================================================================
+
+
+.                                        load And Ready Method
+
+
+
+lecture - 27-9-22
+
+
+Ready Method -->  this method will first load the DOM structure then the javascript code will execute
+
+load Method --> this will load the resource for exmple (Img src "....") along with dom Elements 
+
+
+
+<body>
+     
+    <div class="container1">
+        hellow all 1
+    </div>
+    <div class="container2" onclick="showmsg();">
+        hellow all 1
+    </div>
+    
+</body>
+
+<script>
+
+$(document).ready(()=>{  //   $(document).ready()  --> this method will check  DOM element created on not 
+
+
+var firstdiv = document.querySelector(".container1");   
+firstdiv.addEventListener("click", () => {
+  console.log("div 1 clicked");
+});
+})
+
+
+
+
+var showmsg = () => {
+  console.log("div 2 clicked");
+};
+</script>
+
+
+==================================================================================
+
+
+.                       Minification Process - important
+
+
+
+note -->  beautiful process in which we can compress the javascrict code with some online tools 
+
+pro of Minification
+
+- Most important it will provide the data security
+- performance will be increased
+- js code will take less memory
+
+
+
+
+.               NON mminified code
+
+
+<script>
+    var collection = (() => {
+  return {
+    /**
+     * Function to calculate the sum of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result Sum of numbers
+     */
+
+    doAddition(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue + secondvalue;
+
+      return result;
+    },
+
+    /**
+     * Function to calculate the subtraction of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result subtraction of numbers
+     */
+    dosubstraction(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue - secondvalue;
+
+      return result;
+    },
+
+    /**
+     * Function to calculate the Multiplication of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result Multiplication of numbers
+     */
+
+    doMultiplication(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue * secondvalue;
+
+      return result;
+    },
+
+    /**
+     * Function to calculate the divison of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result divison of numbers
+     */
+
+    dodivision(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue / secondvalue;
+
+      return result;
+    },
+  };
+})();
+
+</script>
+
+
+
+
+
+
+----------------------------------------------
+
+.                 --> MINIFIED CODE
+
+
+
+
+
+
+. this is minified code 
+. functionality will  be same on code gets compressed with help of online tool
+
+
+
+
+<script>
+    var collection={doAddition:(i,o)=>(i=parseInt(i))+(o=parseInt(o)),dosubstraction:(i,o)=>(i=parseInt(i))-(o=parseInt(o)),doMultiplication:(i,o)=>(i=parseInt(i))*(o=parseInt(o)),dodivision:(i,o)=>(i=parseInt(i))/(o=parseInt(o))};
+</script>
+
+
+
+===========================================================================================
+
+
+
+
+
+.               Apliction architecure  - important
+
+
+
+- webservice --> indiviual job in the server perform when client perform some action 

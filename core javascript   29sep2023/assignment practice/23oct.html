@@ -1,0 +1,212 @@
+
+
+
+
+==========================================================================================================
+
+
+
+
+
+.         soliving assignment with help of json and function
+
+
+
+
+
+
+
+
+
+
+======================================================================================================
+<body>
+  write a program to take a static array with values and return all even numbers
+  within it
+  <script>
+    var even = {
+      store: " ",
+
+      arr: [23, 5, 56, 78, 98, 234, 45, 67, 878, 12],
+
+      printarray: function () {
+        for (var i = 0; i < this.arr.length; i++) {
+          if (this.arr[i] % 2 == 0) {
+            this.store += this.arr[i] + " ";
+          }
+        }
+        console.log("even number =  " + even.store);
+      },
+    };
+
+    even.printarray();
+  </script>
+</body>
+
+==================================================================================================
+. write a program to find out the sum of all the values within the given array.
+
+<body>
+  write a program to find out the sum of all the values within the given array.
+
+  <div>sum of array is = <span id="showsum"></span></div>
+  <script>
+    var sum = {
+      smallest: 0,
+      arr: [12, 23, 4, 56, 78, 86, 67, 15],
+
+      action: function () {
+        for (var i = 0; i < this.arr.length; i++) {
+          this.smallest += this.arr[i];
+        }
+        document.querySelector("#showsum").innerHTML = sum.smallest;
+      },
+    };
+
+    sum.action();
+  </script>
+</body>
+
+======================================================================================================
+write a program to find out the sum of all odd numbers within the given array
+
+<body>
+  <div>sum of array is = <span id="showSumOfOddd"></span></div>
+  <script>
+    var sum = {
+      smallest: 0,
+
+      arr: [12, 23, 4, 56, 78, 86, 67, 15],
+
+      action: function () {
+        for (var i = 0; i < this.arr.length; i++) {
+          if (this.arr[i] % 2 != 0) {
+            console.log(this.arr[i]);
+
+            this.smallest += this.arr[i];
+          }
+        }
+        document.querySelector("#showSumOfOddd").innerHTML = sum.smallest;
+      },
+    };
+
+    sum.action();
+  </script>
+</body>
+
+====================================================================================================
+write a program to find out the smallest and the largest number from the given
+array.
+
+<body>
+  <div>smallest number is = <span id="smallest"></span></div>
+  <div>largest number is = <span id="largest"></span></div>
+  <script>
+    var sum = {
+      smallest: 100,
+      largest: 0,
+
+      arr: [12, 23, 4, 56, 78, 86, 67, 15],
+
+      action: function () {
+        for (var i = 0; i < this.arr.length; i++) {
+          if (this.smallest > this.arr[i]) {
+            this.smallest = this.arr[i];
+          }
+
+          if (this.largest < this.arr[i]) {
+            this.largest = this.arr[i];
+          }
+        }
+        document.querySelector("#smallest").innerHTML = sum.smallest;
+
+        document.querySelector("#largest").innerHTML = sum.largest;
+      },
+    };
+
+    sum.action();
+  </script>
+</body>
+
+=====================================================================================================
+
+<body>
+  write a program to find out the second largest number from the given array.
+
+  <div>Second largest number from array is = <span id="largest"></span></div>
+  <script>
+    var sum = {
+      temp: 0,
+
+      largest: 0,
+
+      arr: [5, 2, 7, 9, 1, 3, 4, 0],
+
+      action: function () {
+        for (var i = 0; i < this.arr.length; i++) {
+          if (this.arr[i] > this.arr[i + 1]) {
+            this.temp = this.arr[i];
+            this.arr[i] = this.arr[i + 1];
+            this.arr[i + 1] = this.temp;
+
+            this.temp = 0;
+            i = -1;
+          }
+          this.temp = this.arr[6];
+        }
+
+        document.querySelector("#largest").innerHTML = sum.temp;
+      },
+    };
+
+    sum.action();
+  </script>
+</body>
+
+=======================================================================================================
+
+
+
+
+write a program to find out list of all the all prime number within the
+given array.
+
+
+
+<body>
+ 
+
+  <div>Prime number from array list = <span id="prime"></span></div>
+  <script>
+    var prime = {
+      arr: [4, 12, 13, 14, 17, 9, 7, 3, 18, 19],
+
+      store: " ",
+
+      count: 0,
+
+      calculate: function () {
+        for (var i = 0; i < this.arr.length; i++) {
+          for (var j = 1; j <= this.arr[i]; j++) {
+            if (this.arr[i] % j == 0) this.count++;
+          }
+
+          if (this.count == 2) {
+            this.store += this.arr[i] + " , ";
+          }
+          this.count = 0;
+
+          document.querySelector("#prime").innerHTML = this.store;
+        }
+      },
+    };
+
+    prime.calculate();
+  </script>
+</body>
+
+
+
+=======================================================================================================
+
+

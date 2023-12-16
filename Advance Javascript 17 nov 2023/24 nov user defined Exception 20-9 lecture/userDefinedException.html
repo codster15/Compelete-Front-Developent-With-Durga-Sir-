@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            border: 2px solid;
+            width: 400px;
+            margin: 20px auto;
+        }
+        li{
+            list-style: none;
+
+            margin: 10px;
+            padding: 5px;
+        }
+        .nameError{
+            color: red;
+            font-size: 13px;
+            display: none;
+
+        }
+        .ageError{
+            color: red;
+            font-size: 13px;
+            display: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Name : 
+            <input type="text" class="fname">
+            <div class="nameError "> * Name is Mandate</div>
+        </li>
+        <li>Age:
+            <input type="text" class="age">
+            <div class="ageError"> * Age is Mandate</div>
+        </li>
+        <li class="bsubmit"><input type="button" value="Submit" onclick="submitdata();"></li>
+    </ul>
+
+
+    <script>
+        var submitdata =()=>{
+            var name = document.querySelector(".fname").value;
+            var age = document.querySelector(".age").value;
+
+            age = parseInt(age);
+
+            // console.log("Name - " + name);
+            // console.log("Age - " + age);
+        
+            try{
+                if(name == ""){
+                    throw "name is empty"
+                }else{
+                    document.querySelector(".nameError").style.display = "none";
+                }
+                if(age < 22){
+                    throw "age is less then 22";
+                }else{
+                    document.querySelector(".ageError").style.display = "none";
+                }
+            }catch(error){
+                switch(error){
+                    case "name is empty":
+                    document.querySelector(".nameError").style.display = "block";
+                    break;
+
+                    case  "age is less then 22":
+                    document.querySelector(".ageError").style.display = "block";
+                    break;
+                }
+                
+                
+            }
+        
+        
+        }
+
+    </script>
+    
+</body>
+</html>

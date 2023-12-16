@@ -1,0 +1,1447 @@
+Advance JS 
+
+    inheritence 
+        btw static and static object
+        btw static and dynamic obj
+        btw two dynamic objs
+        single level
+        multilevel 
+        classes
+        
+        inheritence
+         Constructors
+    Objects 
+    super 
+    Exception handling
+    try
+    catch
+    throw
+    finally data security in JS
+    closures
+
+<!-- ------------------------------------------------------------------------- -->
+
+.                                                         static inheritance between two static object
+
+
+
+
+. In STATIC INHERITENCE ---> We Use ( .__proto__ ) 
+
+
+
+
+
+<script>
+    
+  // parent object created
+  var parentdetails = {
+    father: "Ram pal",
+    mother: "champavati",
+    location: "coimbatore",
+  };
+
+  //  child object created
+  var child1 = {
+    name: "raj",
+    age: 12,
+    gender: "male",
+
+    //   created ram method inside the function
+    ram() {
+      console.log("name - " + this.name);
+      console.log("age - " + this.age);
+      console.log("gender - " + this.gender);
+      console.log("father - " + this.father);
+      console.log("mother - " + this.mother);
+      console.log("location - " + this.location);
+    },
+  };
+
+  child1.__proto__ = parentdetails; // here we are accesseing(parent dtails ) the data from one object to another object
+  child1.ram();
+
+//   -----------------------------------------------------------
+
+  var child2 = {
+    name: "teena",
+    age: 15,
+    gender: "female",
+    teena() {
+      console.log("name - " + this.name);
+      console.log("age - " + this.age);
+      console.log("gender - " + this.gender);
+      console.log("father - " + this.father);
+      console.log("mother - " + this.mother);
+      console.log("location - " + this.location);
+    },
+  };
+
+  child2.__proto__ = parentdetails; // here we are accesseing(parent dtails ) the data from one object to another object
+  child2.teena();
+</script>
+
+. lecture 15/9/22 done
+================================================================================================================
+
+
+.                        Inheritence between static and dynamic object (lecture -16/9/22 time 5:00)
+
+
+. N O T E ------->  Inheritence between static and dynamic object --> (   Object.create()    )
+
+Exmaple -
+var sdetails = Object.create(schooldetails);
+
+
+
+
+<script>
+
+    // static object 
+  var schooldetails = {
+    schoolname: "Education hub",
+    board: "Up.board",
+    location: "Hydrabad",
+  };
+
+  var readStudentData = () => {
+    var sdetails = Object.create(schooldetails); // this will point towards  the shooldetails object and inherit the property of it in his object
+
+    sdetails.showdata = function () {
+      console.log("Student - " + this.name);
+      console.log("Age - " + this.age);
+      console.log("Gender - " + this.gender);
+      console.log("class - " + this.class);
+      console.log("Schoolname - " + this.schoolname);
+      console.log("board - " + this.board);
+      console.log(" location - " + this.location);
+    };
+
+    sdetails.name = document.querySelector(".studentname").value;
+
+    sdetails.age = document.querySelector(".studentage").value;
+
+    sdetails.gender = document.querySelector( "input[name=gender]:checked").value;
+
+    sdetails.class = document.querySelector("#admission").value;
+
+    sdetails.showdata();
+  };
+
+
+</script> 
+
+==================================================================================================================
+
+
+
+.                                                   Most important topic C L A S S -> ( Basic Structure of class )
+
+
+. NOte --> we only create the class when we require the same Structure for all the object 
+
+
+
+
+
+<script>
+  class Bookdetails {
+    book1() {
+      console.log("Alchemist");
+    }
+
+    book2() {
+      console.log("Atomic habit");
+    }
+  }
+
+  var klass = new Bookdetails(); // most important step is whole class got store --> klass .new with help of klass we cal call method inside it  .so now klass become the object
+
+  klass.book1();
+  klass.book2();
+</script>
+
+========================================================================================================================
+
+
+.                                                this keyword , constructer
+
+.Note --> when we create the object from the class automatically constructer mwthod will be invoked.
+
+
+
+<script>
+  class Bookdetails {
+    constructor() {
+      this.bookname = "City of dreams";
+      this.price = 4000;
+      this.author = "chetan";
+    }
+
+    book1() {
+      console.log("Alchemist");
+    }
+
+    book2() {
+      console.log("Atomic habit");
+    }
+  }
+
+  var klass = new Bookdetails(); // most important step is whole class got store --> klass .now with help of klass we cal call method inside it  .so now klass become the object
+  var copy = new Bookdetails();
+
+  klass.book1();
+  klass.book2();
+
+  console.log(klass);
+  console.log(copy);
+</script>
+
+=======================================================================================================================
+
+
+
+.  classes constructer => note - when we create a object from the class automatically constructer method will be called or invoked
+
+
+
+
+
+<script>
+  class Animal {
+    constructor(name, age, size) {
+      this.name = name;
+      this.age = age;
+      this.size = size;
+    }
+
+    dog() {
+      console.log(" I am innocent");
+    }
+
+    loin() {
+      console.log(" I am dangerous ");
+    }
+  }
+
+  var innocent = new Animal("marshell", 8, "small"); // here we created the object to acces the data and passsing the parameteres to constructer
+  var dangerous = new Animal("Narnia", 18, "gaint"); // here we created the object to acces the data and passsing the parameteres to constructer
+
+  //   innocent.dog();
+  //   innocent.loin();
+
+  console.log(innocent);
+  console.log(dangerous);
+</script>
+
+=============================================================================================================================
+
+
+
+.                                                          Exmaple using class and constructer
+
+
+
+
+
+
+<script>
+
+    // OBJECT 1 -> CREATED
+  var student1 = {
+    name: "Amit bhadana",
+    age: 16,
+    gender: "male",
+    class: "VIII",
+  };
+
+      // OBJECT 2 -> CREATED
+  var student2 = {
+    name: "Carry Minati",
+    age: 14,
+    gender: "male",
+    class: "V",
+  };
+
+      // OBJECT 3 -> CREATED
+  var student3 = {
+    name: "Teena",
+    age: 10,
+    gender: "female",
+    class: "III",
+  };
+
+
+//   CLASS CREATED
+  class Studentdetails {
+    constructor(sdetails) {
+      this.name = sdetails.name;
+      this.age = sdetails.age;
+      this.gender = sdetails.gender;
+      this.class = sdetails.class;
+      this.school = "Wonderland";
+      this.location = "lucknow";
+      this.board = "Up board";
+    }
+
+
+    // METHOD CREATED INSIDE THE CLASS
+    ShowStudentDetails() {
+      console.log("Name - " + this.name);
+      console.log("Age - " + this.age);
+      console.log("Gender - " + this.gender);
+      console.log("Class - " + this.class);
+      console.log("School - " + this.school);
+      console.log("Location - " + this.location);
+      console.log("Board - " + this.board);
+    }
+
+
+    // ANOTHER MEATHOD CREATED INSIDE THE CLASS
+    line() {
+      console.log(
+        "=========================================="
+      );
+    }
+  }
+
+  var firstStudent = new Studentdetails(student1);   //OBJECT CREATED AS (FIRSTSTUDENT) FROM THE (STUDENTDETAILS) CLASS
+  var SecondStudent = new Studentdetails(student2); //OBJECT CREATED AS (SECONDTUDENT) FROM THE (STUDENTDETAILS) CLASS
+  var thirdStudent = new Studentdetails(student3);   //OBJECT CREATED AS (THIRDSTUDENT) FROM THE (STUDENTDETAILS) CLASS
+
+  firstStudent.ShowStudentDetails();
+  firstStudent.line();
+  SecondStudent.ShowStudentDetails();
+  SecondStudent.line();
+  thirdStudent.ShowStudentDetails();
+</script>
+
+
+.                                    lecture- End = 16/09/22
+====================================================================================================
+
+
+   <!-- Assignment 1
+
+create an object for bank account
+    savings acount 
+        account number
+        custumerNo
+        cus address
+        cus kyc
+        cust account balance
+        cust debts -->
+
+
+
+        <script>
+
+            var bankcos1 = {
+                accountNo : 212325,       
+                customerName : "Raj",
+                CustomerAddress : "Mumbai a-10" ,
+                customerAccountBal : 50000,
+                customerDebts : 20000
+
+            }
+
+            var bankcos2 = {
+                accountNo : 468325,       
+                customerName : "Teena",
+                CustomerAddress : "Mumbai c-90" ,
+                customerAccountBal : 180000,
+                customerDebts : 50000
+
+            }
+
+            var bankcos3 = {
+                accountNo : 937325,       
+                customerName : "Alex",
+                CustomerAddress : "Mumbai d-30" ,
+                customerAccountBal : 150000,
+                customerDebts : 70000
+
+            }
+
+            class SavingsAccount {
+
+                constructor (bankdetails){
+                    this.bank = "Swiss Bank"
+                    this.customerName = bankdetails.customerName
+                    this.accountNo = bankdetails.accountNo
+                    this.CustomerAddress = bankdetails.CustomerAddress
+                    this.customerAccountBal = bankdetails.customerAccountBal
+                    this.customerDebts = bankdetails.customerDebts
+                }
+
+                 debts (){
+                    this.balanceAfterDebts = 0
+
+                    this.balanceAfterDebts = this.customerAccountBal - this.customerDebts;
+
+                 }
+
+
+                    showData (){
+                        this.debts();
+                        console.log("Bank - " + this.bank);
+                        console.log("Customer Name - " + this.customerName);
+                        console.log("Account NUmber - " + this.accountNo);
+                        console.log("Customer Address - " + this.CustomerAddress);
+                        console.log("Customer Account Balance - " + this.customerAccountBal);
+                        console.log("Customer Debts - " + this.customerDebts);
+                        console.log("Customer balance after the debts - " + this.balanceAfterDebts);
+                    }
+
+
+            }
+
+
+                var bankCustomer1 = new SavingsAccount(bankcos1);
+                console.log(bankCustomer1);
+                bankCustomer1.showData();
+
+               
+                console.log("==========================================================");
+
+
+                var bankCustomer2 = new SavingsAccount(bankcos2);
+                console.log(bankCustomer2);
+                bankCustomer2.showData();
+
+                
+                console.log("==========================================================");
+
+
+                var bankCustomer3 = new SavingsAccount(bankcos3);
+                console.log(bankCustomer3);
+                bankCustomer3.showData();
+   
+        </script>
+
+
+
+===================================================================================================
+
+.                              Inheritence between the classes
+
+
+
+<script>
+
+  //Inheritence between Classes
+
+  var studentx = {};
+  studentx.Stuentname = "Aman ";
+  studentx.StudentAge = 21;
+  studentx.StudentGender = "Male";
+
+
+  var schooldetails = {}
+
+  schooldetails.Sname = "Shine Way";
+  schooldetails.Sboard = " Up board ";
+  schooldetails.Slocation = "Mumbai";
+  
+
+
+
+  class school {
+
+      constructor(obj1){
+          this.Sname = obj1.Sname;
+          this.Sboard = obj1.Sboard;
+          this. Slocation = obj1.Slocation;
+      }
+
+      showSchool(){
+          console.log("School Name - " + this.Sname)
+          console.log("Board - " + this.Sboard)
+          console.log("Location - " + this.Slocation)
+      }
+
+  }
+
+  class student extends school {
+
+      constructor(obj , obj1){
+          super(obj1);
+          this.Stuentname = obj.Stuentname;
+          this.StudentAge = obj.StudentAge;
+          this. StudentGender = obj.StudentGender;
+      }
+
+      showStudent(){
+          console.log("Student Name - " + this.Stuentname)
+          console.log("Student Age - " + this.StudentAge)
+          console.log("Student Gender - " + this.StudentGender)
+      }
+
+
+  }
+
+  var Studentdata = new student(studentx ,schooldetails);
+
+  // console.log(Studentdata);
+  Studentdata.showStudent();
+  Studentdata.showSchool();
+
+
+</script>
+
+
+=======================================================================================
+
+.                 dynamic data input and inheritence between the two dynamic classes
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            border: 1px solid;
+            margin: 30px ;
+            padding: 10px;
+            width: 400px;
+        }
+        li{
+            list-style: none;
+            border: 0px solid #ccc;
+            margin: 10px ;
+            padding: 5px ;
+        }
+        .lbutton{
+
+            text-align: center;
+
+        }
+        span{
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+         <ul>
+        <li>College Name : 
+            <input type="text" class="collegename">
+        </li>
+        <li>College Code : 
+            <input type="text" class="collegecode"> 
+        </li>
+        <li class="lbutton"><input type="button" value="Register College" onclick="readCollegedetails();"></li>
+    </ul>
+
+    <ul>
+        <li>Stuent Name : 
+            <input type="text" class="stuname">
+        </li>
+
+        <li>Student Age : 
+            <input type="text" class="stuage">
+        </li>
+
+        <li>
+            Student Gender : 
+            <input type="text" class="stugender">
+        </li>
+        <li class="lbutton"> <input type="button" value="Register" onclick="readStudentdetails();"></li>
+    </ul>
+    
+    <li ><span class="Succesful"></span></li>
+    
+    </div>
+
+   
+    
+
+<script>
+    
+var registeredStudentList = []; 
+
+//created school class
+class School {
+    constructor(schoolObj){
+        this.schoolname = schoolObj.schoolname;
+        this.schoolcode = schoolObj.schoolcode;
+    }
+    
+
+    
+    showSchoolDetails = function (){
+
+        console.log("School name - " + this.schoolname);
+        console.log("School Code - " + this.schoolcode);
+        
+    }
+}
+
+
+//created student class
+class student extends School{
+    constructor(schoolObj,studentObj){
+        super(schoolObj)
+        this.studentname =  studentObj.studentname;
+        this.studentage = studentObj.studentage;
+        this.studentgender =  studentObj.studentgender;
+        
+    }
+
+    showStudentDetails = function (){
+        console.log("Student name - " + this.studentname);
+        console.log("Student age - " + this.studentage);
+        console.log("STudent Gender - " + this.studentgender);
+        this.showSchoolDetails();
+        
+    }
+
+}
+
+    var schoolObj = {}
+
+
+    //created function inside function created an object to fetch the data which is given by the user
+ var readCollegedetails = function(){
+
+    schoolObj.schoolname = document.querySelector(".collegename").value;
+    schoolObj.schoolcode = document.querySelector(".collegecode").value;
+
+ }
+
+
+
+ //created function inside function created an object to fetch the data which is given by the user
+ var readStudentdetails = function(){
+    var studentObj = {}
+    studentObj.studentname = document.querySelector(".stuname").value;
+    studentObj.studentage =  document.querySelector(".stuage").value;
+    studentObj.studentgender = document.querySelector(".stugender").value;
+
+    var showcompeleteData = new student(schoolObj,studentObj);
+    showcompeleteData.showStudentDetails();
+    registeredStudentList.push(showcompeleteData);
+    console.log(registeredStudentList);
+    document.querySelector(".Succesful").innerHTML = "Student got Registered Sucessfully";
+
+}
+
+
+</script>
+
+
+</body>
+</html>
+
+
+================================================================================================================
+
+.                                       Exception Handling (Most important realtime topic)
+
+
+Exception Handling:
+
+    Exception error
+
+        compile time error
+        syntactical errors
+
+     Runtime errors
+
+
+
+     try
+
+     catch
+
+     finally
+
+     throw   
+
+
+
+     <script>
+
+      console.log("application start")
+      var a = 90;
+      var b = 30; 
+      var c = a + b ;
+      console.log("the sum is - " + c)
+
+      try{
+          console.log(d);
+      }catch (error){
+          console.log("variable is not available");
+
+      }
+     
+      console.log("application start");
+  </script>
+
+  
+lecture - 19-9-22
+time - 49:00
+
+================================================================================================================
+
+
+.                                     Realtime Exception Handling using --> (try catch) Exmaple
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            border: 1px solid #ccc;
+            text-align: center;
+            margin: 20px ;
+            padding: 10px;
+            color: blueviolet;
+            font-family: 'Playpen Sans', cursive;
+        }
+        .thanksblock,
+        .taskclass{
+            border: 1px solid;
+            text-align: center;  
+            width: 500px ;
+            padding:70px ;
+            margin: 20px auto;
+          
+        }
+
+        .thanksblock{
+          background-color: green;
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Task manager</h1>
+    <div>
+        <input type="text" placeholder="Enter Name here" class="username">
+        <input type="button" value="Save User Name " class="savename" onclick="saveUserName();">
+        <input type="button" value="Create Task Container " onclick="taskcontainer();">
+        <input type="button" value="Get Today Task" onclick="getTodayTask();">
+    </div>
+
+    <div class="TaskBlock">
+
+    </div>
+
+    <div class="thanksblock"></div>
+
+    <script>
+
+
+var tasklist = [
+    "test the project ",
+    "Do the development",
+    "find the error in current project ",
+    "Finish the current project"
+
+]
+
+var getusername;
+
+ var  saveUserName = function(){
+  getusername = document.querySelector(".username").value;
+    console.log(getusername);
+    document.querySelector(".thanksblock").style.display = "none";
+ }
+ 
+
+  var taskcontainer = function(){
+    var containerTask = document.createElement("div");
+    containerTask.setAttribute("id" , " taskId");
+    containerTask.setAttribute("class" , "taskclass");
+
+    document.querySelector(".TaskBlock").append(containerTask);
+
+ }
+
+  var getTodayTask = function(){
+
+    var getrandom = Math.floor(Math.random()*tasklist.length);
+   var task = tasklist[getrandom];
+
+   try{
+    document.querySelector(".taskclass").innerHTML = "Mr."+ getusername + "Your today's task is " +  task;
+   } catch(error){
+        alert("please click on the create the Task Container to get the task ")
+   }
+ 
+    showthanksMsg();
+
+
+
+}
+
+ var showthanksMsg = function (){
+
+    setTimeout(()=>{var msg  = " Thaks for using out application";
+    document.querySelector(".thanksblock").innerHTML = msg;
+    document.querySelector(".thanksblock").style.display = "block";} , 3000);
+    
+ }
+
+    </script>
+</body>
+</html>
+
+====================================================================================================================
+
+
+.                             Exception Handling with multiple Exception
+time = 1:00:00
+lecture = 20-09-22
+
+
+<body>
+  <div id="abc"></div>
+
+  <script>
+
+      try{
+          console.log("Step 1");
+          // document.querySelector("#abc1").innerHTML = "Hellow";
+          console.log("Step 2");
+          console.log("value is  " + data[2]);
+          console.log("Step 3");
+      } catch (error){
+          if(error.message === "data is not defined"){
+              console.log("Data error got raised")
+          }else{
+              console.log("Element not found");
+          }
+      } finally {
+          console.log("Finally got executed");
+      }
+            
+      
+  </script>
+</body>
+
+
+========================================================================================================
+
+
+
+.                                   User defined Exception ( throw )
+
+lecture - 21-9-22
+time    - 5:00 (Starts from the five min);
+
+
+
+<script>
+  var submitdata =()=>{
+      var name = document.querySelector(".fname").value;
+      var age = document.querySelector(".age").value;
+
+      age = parseInt(age);
+
+      // console.log("Name - " + name);
+      // console.log("Age - " + age);
+  
+      try{
+          if(name == ""){
+              throw "name is empty"
+          }else{
+              document.querySelector(".nameError").style.display = "none";
+          }
+          if(age < 22){
+              throw "age is less then 22";
+          }else{
+              document.querySelector(".ageError").style.display = "none";
+          }
+      }catch(error){
+          switch(error){
+              case "name is empty":
+              document.querySelector(".nameError").style.display = "block";
+              break;
+
+              case  "age is less then 22":
+              document.querySelector(".ageError").style.display = "block";
+              break;
+          }
+          
+          
+      }
+  
+  
+  }
+
+</script>
+=======================================================================================================================
+
+
+.                               data security  --> closures (Most important)
+
+lecture - 21-9-22
+time --> 30:00
+
+
+<script>
+
+  (function (){
+      var data = {
+      name : "Raj"
+  }
+
+  function test  (){
+      console.log("I am from test")
+  }
+
+  class Sample{
+
+  }
+
+  console.log("i am from inside closer data object - " + data.name);
+  test();
+  })()
+
+  console.log("i get called from outside closures --> data object - " + data.name);
+ 
+  test();
+ 
+ 
+</script>
+
+
+======================================================================================================
+
+
+
+.                                  Using self made Liabrary
+
+lecture - 21-9-22
+time - 40:00
+
+<!-- MathOperation.html   file below
+
+  linked three files
+  
+  1-app.js
+  2-style.css
+  3-MathmaticalOperationUtil.js (made exteral js file)
+
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <ul>
+        <li>First number : 
+            <input type="text" class="fvalue">
+        </li>
+        <li>
+            Second number : 
+            <input type="text" class="svalue">
+        </li>
+        <li>
+            <input type="button" value="Do Additon" onclick="doOperation('add');">
+            <input type="button" value="Do Subtraction"  onclick="doOperation('sub');">
+            <input type="button" value="Do Multiplication" onclick="doOperation('mul');">
+            <input type="button" value="Do Division" onclick="doOperation('div');">
+           
+        </li>
+        <li class="hideresult">
+            the <span class="showOpr"></span> of two number is   <span class="res"></span>
+        </li>
+    </ul>
+
+
+    <script src="app.js"></script>
+    <script src="MathmaticalOperationUtil.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- css file styling -->
+ul{
+  width: 500px;
+  border: 1px solid;
+  margin: 20px auto;
+  padding: 20px;
+}
+li{
+  list-style: none;
+  margin: 10px;
+  padding: 10px ;
+  border: 1px solid #ccc;
+
+}
+.hideresult{
+  display: none;
+}
+
+
+
+
+
+
+<!-- javascript file  -->
+
+var doOperation = function (actiontype){
+
+  var storeobj = {};
+
+  storeobj.firstvalue = document.querySelector(".fvalue").value;
+  storeobj.secondvalue = document.querySelector(".svalue").value;
+
+  storeobj.firstvalue = parseInt(storeobj.firstvalue)
+  storeobj.secondvalue = parseInt(storeobj.secondvalue)
+  storeobj.result;
+
+  switch (actiontype){
+
+          case "add":
+          storeobj.result = doAddition (storeobj.firstvalue, storeobj.secondvalue);
+          break;
+      
+          case "sub":
+          storeobj.result = dosubstraction (storeobj.firstvalue, storeobj.secondvalue);
+          break;
+      
+          case "mul":
+          storeobj.result = doMultiplication (storeobj.firstvalue, storeobj.secondvalue);
+          break;
+      
+          case "div":
+          storeobj.result = dodivision(storeobj.firstvalue, storeobj.secondvalue);
+          break;
+          
+  }
+
+ 
+
+
+  document.querySelector(".res").innerText = storeobj.result;
+  document.querySelector(".showOpr").innerText = actiontype; 
+  document.querySelector(".hideresult").style.display = "block";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- External Liabrary -->
+
+/**
+ * Function to calculate the sum of two values
+ * @param {number/string} firstvalue 
+ * @param {number/string} secondvalue 
+ * @returns result Sum of numbers
+ */
+
+var doAddition = (firstvalue, secondvalue) => {
+  var result;
+
+  firstvalue = parseInt(firstvalue);
+  secondvalue = parseInt(secondvalue);
+
+  result = firstvalue + secondvalue;
+
+  return result;
+};
+
+
+
+/**
+ * Function to calculate the subtraction of two values
+ * @param {number/string} firstvalue 
+ * @param {number/string} secondvalue 
+ * @returns result subtraction of numbers
+ */
+
+var dosubstraction = (firstvalue, secondvalue) => {
+  var result;
+
+  firstvalue = parseInt(firstvalue);
+
+  secondvalue = parseInt(secondvalue);
+
+  result = firstvalue - secondvalue;
+
+  return result;
+};
+
+
+
+
+
+
+/**
+ * Function to calculate the Multiplication of two values
+ * @param {number/string} firstvalue 
+ * @param {number/string} secondvalue 
+ * @returns result Multiplication of numbers
+ */
+var doMultiplication = (firstvalue, secondvalue) => {
+  var result;
+
+  firstvalue = parseInt(firstvalue);
+  secondvalue = parseInt(secondvalue);
+
+  result = firstvalue * secondvalue;
+
+  return result;
+};
+
+
+
+
+
+
+
+
+/**
+ * Function to calculate the divison of two values
+ * @param {number/string} firstvalue 
+ * @param {number/string} secondvalue 
+ * @returns result divison of numbers
+ */
+var dodivision = (firstvalue, secondvalue) => {
+  var result;
+
+  firstvalue = parseInt(firstvalue);
+  secondvalue = parseInt(secondvalue);
+
+  result = firstvalue / secondvalue;
+
+  return result;
+};
+
+
+==========================================================================================================
+
+
+
+.                          how to access the data of clouser --> (outside ) 
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      var playerInfo =  (()=>{
+
+        var username = "Surya kumar Yadav"
+
+        var showdata = ()=>{
+            var first = "Uttar" 
+            var second = "Pradesh"
+
+            var total  = first + second
+            console.log(total);
+
+        }
+
+
+        return {
+            user_name : username,
+            sample (){
+                showdata();
+            }
+        }
+    })()
+
+
+
+
+        console.log(playerInfo.user_name);
+        playerInfo.sample();
+
+
+
+    </script>
+</body>
+</html>
+
+
+==========================================================================================================
+
+
+
+
+.                  pure clouser program with data security with using --> (external liabrary)
+
+
+lecture - 22-9-22
+time - from the starting 
+
+
+
+<!-- html file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <ul>
+        <li>First number : 
+            <input type="text" class="fvalue">
+        </li>
+        <li>
+            Second number : 
+            <input type="text" class="svalue">
+        </li>
+        <li>
+            <input type="button" value="Do Additon"  id="but1">
+            <input type="button" value="Do Subtraction"  id="but2">
+            <input type="button" value="Do Multiplication" id="but3">
+            <input type="button" value="Do Division" class="but4">
+           
+        </li>
+        <li class="hideresult">
+            the <span class="showOpr"></span> of two number is   <span class="res"></span>
+        </li>
+    </ul>
+
+
+    <script src="app.js"></script>
+    <script src="MathmaticalOperationUtil.js"></script>
+</body>
+</html>
+
+
+
+<!-- js file -->
+<script>
+(()=>{
+
+  document.querySelector("#but1").addEventListener("click" , ()=>{
+      doOperation('add');
+  })
+
+  document.querySelector("#but2").addEventListener("click" , ()=>{
+      doOperation('sub');
+  })
+
+  document.querySelector("#but3").addEventListener("click" , ()=>{
+      doOperation('mul');
+  })
+
+  document.querySelector(".but4").addEventListener("click" , ()=>{
+      doOperation('div');
+  })
+
+var doOperation = function (actiontype){
+
+  var storeobj = {};
+
+  storeobj.firstvalue = document.querySelector(".fvalue").value;
+  storeobj.secondvalue = document.querySelector(".svalue").value;
+
+  storeobj.firstvalue = parseInt(storeobj.firstvalue)
+  storeobj.secondvalue = parseInt(storeobj.secondvalue)
+  storeobj.result;
+
+  switch (actiontype){
+
+          case "add":
+          storeobj.result = collection.doAddition (storeobj.firstvalue, storeobj.secondvalue);
+          break;
+      
+          case "sub":
+          storeobj.result =collection.dosubstraction (storeobj.firstvalue, storeobj.secondvalue);
+          break;
+      
+          case "mul":
+          storeobj.result = collection.doMultiplication (storeobj.firstvalue, storeobj.secondvalue);
+          break;
+      
+          case "div":
+          storeobj.result = collection.dodivision(storeobj.firstvalue, storeobj.secondvalue);
+          break;
+          
+  }
+
+ 
+
+
+  document.querySelector(".res").innerText = storeobj.result;
+  document.querySelector(".showOpr").innerText = actiontype; 
+  document.querySelector(".hideresult").style.display = "block";
+}
+
+
+})()
+
+
+</script>
+
+
+
+
+
+<!--External liabrary file -->
+
+
+<script>
+  var collection = (() => {
+  return {
+    /**
+     * Function to calculate the sum of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result Sum of numbers
+     */
+
+    doAddition(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue + secondvalue;
+
+      return result;
+    },
+
+    /**
+     * Function to calculate the subtraction of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result subtraction of numbers
+     */
+    dosubstraction(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue - secondvalue;
+
+      return result;
+    },
+
+    /**
+     * Function to calculate the Multiplication of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result Multiplication of numbers
+     */
+
+    doMultiplication(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue * secondvalue;
+
+      return result;
+    },
+
+    /**
+     * Function to calculate the divison of two values
+     * @param {number/string} firstvalue
+     * @param {number/string} secondvalue
+     * @returns result divison of numbers
+     */
+
+    dodivision(firstvalue, secondvalue) {
+      var result;
+
+      firstvalue = parseInt(firstvalue);
+      secondvalue = parseInt(secondvalue);
+
+      result = firstvalue / secondvalue;
+
+      return result;
+    },
+  };
+})();
+
+</script>
+
+
+====================================================================================================================
+
+
+
+.                  T O P I C S COVERED
+
+Inheritence
+  Single level
+  multilevel
+
+
+  inheritance between two  static objects
+  
+  inheritance betwween static and dynamic object 
+-----------------
+  Class
+
+  inheritence betweeen to class
+
+--------------
+  Exception Handling
+    try
+    catch
+    throw
+    finally
+
+  handling userdefined Exception 
+  ----------------------
+  
+  closures
+
+    accesseing the data of closures oustside !!!
+
+
+
+
+    .                                     End

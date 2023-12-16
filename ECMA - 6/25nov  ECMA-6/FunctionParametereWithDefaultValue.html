@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var sumOfData = function (a=20,b,c = 10){
+            var sum  = a + b + c;
+            console.log(sum);
+        } 
+
+        sumOfData(10,10)
+
+// default parameter pass program
+        var studentData = function(name ,age ,gender ,optforframework = false){
+            console.log("Student name - " + name);
+            console.log("Student age - " + age);
+            console.log("Student gender - " + gender);
+            console.log("Student optforframework - " + optforframework);
+            console.log("----------------")
+        }
+
+        studentData("Raj",21,"Male"  );
+        studentData("teena",24,"female" );
+        studentData("Kanran johar",41,"Transgender" );
+        studentData("jesssica",28,"female" , true);
+    </script>
+</body>
+</html>

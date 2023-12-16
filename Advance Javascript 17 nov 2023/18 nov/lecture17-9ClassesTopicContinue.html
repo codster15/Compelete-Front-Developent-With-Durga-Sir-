@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+
+//       class Lion {
+//         constructor(name) {
+//           this.name = name;
+//         }
+
+//         danger() {
+//           console.log("I am " + this.name + " Very dangerous");
+//         }
+//       }
+
+//       class Dog extends Lion {
+//         constructor(name, dogname) {
+//           super(name);
+
+//           this.dogname = dogname;
+//         }
+
+//         humble() {
+//           console.log("I am " + this.name + " Very friendly");
+//         }
+//       }
+
+//       var Animal = new Dog("Naria" , " william")
+//       console.log(Animal);
+
+//       Animal.danger();
+//       Animal.humble();
+//       Animal.name;
+// console.log(Animal.name);
+
+
+class abc{
+
+  constructor(name){
+    this.test = name
+  }
+  showdata(){
+    console.log("Hey" + this.test);
+  }
+}
+
+
+class xyz extends abc {
+  constructor(name){
+    super(name);
+    this.showdata();
+  }
+ xyzData(){
+  console.log("done");
+ }
+  
+}
+
+var emp = new xyz(" bro");
+emp.showdata();
+
+    </script>
+  </body>
+</html>

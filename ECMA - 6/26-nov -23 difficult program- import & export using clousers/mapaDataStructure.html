@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+<body>
+    <script>
+
+
+        var m1 = new Map();
+        m1.set("name " , "Aman");
+        m1.set("age" , "21");
+        m1.set("Gender ", "Male")
+        m1.set("Location" , "Assam");
+
+        // console.log(m1);
+
+        //supported prefined Methods in Map data structure
+
+        // m1.delete("Gender" , "Male");
+        // console.log(m1);
+        // console.log(m1.size);
+        // console.log(m1.entries());
+
+        for(let [key , value] of m1.entries()){
+            console.log(key)
+            console.log(value)
+        }
+
+
+    </script>
+</body>
+</html>

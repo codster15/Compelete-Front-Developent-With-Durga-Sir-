@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data validation</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="program.js"></script>
+   
+</head>
+
+<body>
+
+    <h1>Data validation</h1>
+
+                <!-- input validation -->
+    <ul>      
+        <li>
+            Name :
+            <input type="text" id="name" onkeypress="return validate(event , '#alertname');" maxlength="20" />
+            <br /><span id="alertname"> * only Characters allowed</span> <br />
+            <span class="namemust"> ! this field is required </span>
+        </li>
+
+        <li>
+            Roll No:
+            <input type="text" id="RollNo" onkeypress="return validateRollno(event);" maxlength="10" />
+            <br /><span id="alertRoll"> * Only number allowed</span><br />
+            <span class="rollnomust"> ! this field is required </span>
+        </li>
+
+        <li>
+            E-mail :
+            <input type="email" id="Email" onkeypress="return validateEmail(event);" />
+            <br />
+            <span id="alertemail"> * use @, use correct email format</span><br />
+            <span class="emailmust"> ! this field is required </span>
+        </li>
+
+        <li>
+            <input type="button" class="button" value="Submit" onclick="return showdata();" />
+        </li>
+    </ul>
+
+
+                 <!-- show data to the user -->
+
+    <ul class="showul">
+        <li>
+            Name -
+            <h2 class="showname"></h2>
+        </li>
+        <li>
+            Roll Number -
+            <h2 class="showrollnumber"></h2>
+        </li>
+        <li>
+            E-mail -
+            <h2 class="showEmail"></h2>
+        </li>
+    </ul>
+
+
+
+
+    
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var show = () => {
+        var names = ["golu", "molu", "tolu", "aalu", "kachalu"];
+
+        randomname(names);
+      };
+
+      var randomname = (names) => {
+        var name = names;
+
+        var no = Math.random() * name.length;
+
+        no = Math.floor(no);
+
+        console.log(name[no] + " is going to school");
+
+        console.log(event)
+      };
+
+      show();
+    </script>
+  </body>
+</html>

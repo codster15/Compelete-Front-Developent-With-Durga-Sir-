@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Progress card Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="program.js"></script>
+  </head>
+  <body>
+    <div class="header">Student Progress card Generator</div>
+    <form action="">
+
+
+
+      <ul>
+        <li>
+          Enter student Name : <span> <input type="text"  id="Showname"/></span>
+        </li>
+        <li>
+          Enter student Age : <span><input type="text" id="age"/></span>
+        </li>
+        <li>
+          GENDER :
+
+           <input checked type="radio" name="gender" value="male" >male
+          <input type="radio" name="gender" value="female" >female
+          
+        </li>
+
+        <li>
+          CLASS :
+          <select name="" id="sclass">
+            <option>Select class</option>
+            <option>Class I</option>
+            <option>Class II</option>
+            <option>classs III</option>
+            <option>Class IV</option>
+            <option>Class V</option>
+          </select>
+        </li>
+
+        <li class="marks" id="downblock">
+          Marks:
+
+          <input type="text" id="m1" />
+          <input type="text" id="m2" />
+          <input type="text" id="m3" />
+          <input type="text" id="m4" />
+          <input type="text" id="m5" />
+        </li>
+
+        <li><input type="button" value="Generate progress Card" onclick="studentDetails.showStudentdata();"/></li>
+      </ul>
+
+
+    </form>
+
+
+
+
+    <ul class="problock">
+        <h1>Progress Card</h1>
+        <li>Name : <span class="showname"> </span></li>
+        <li>Age : <span class="showage"> </span></li>
+        <li>GENDER : <span class="showgender"> </span></li>
+        <li>Standard : <span class="showclass"> </span></li>
+
+
+        <li>Total Marks : <span class="totalmarks"></span></li>
+        <li>Average Marks : <span class="averagem"></span></li>
+        <li>Result : <span class="results" id="passed"></span></li>
+    </ul>
+  </body>
+</html>

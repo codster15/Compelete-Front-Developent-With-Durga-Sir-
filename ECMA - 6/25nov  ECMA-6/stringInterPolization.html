@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+    var userDetails = {
+        name : "Raj",
+        age : 21,
+        gender : 'Male'
+    };
+
+    // old method of doing
+    var msg = " Username name is - " +userDetails.name + ",   userAge is -" + userDetails.age+ ",    UserGender is - " + userDetails.gender;
+    console.log(msg);
+
+
+
+
+    // Ecma 6 concept String inter polization
+    var msg1  = `Username name is -  ${userDetails.name }  userAge is -  ${userDetails.age}  UserGender is - ${userDetails.gender}`
+    console.log(msg1);
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

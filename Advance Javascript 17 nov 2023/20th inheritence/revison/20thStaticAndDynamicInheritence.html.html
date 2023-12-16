@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            width: 400px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid;
+
+        }
+
+        li{
+            list-style: none;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .batan{
+            text-align: center;
+            border: 0px solid;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <ul>
+        <li>Stuent Name : 
+            <input type="text" class="sname">
+        </li>
+
+        <li>Stuent Age : 
+            <input type="text" class="sage">
+        </li>
+
+        <li>Stuent Gender : 
+            <input type="text" class="sgender">
+        </li>
+
+        <li>Stuent Class : 
+            <input type="text" class="sclass">
+        </li>
+
+            <li class="batan"><input type="button" value="Submit" id="SubmitForm" onclick="readStudentData()"></li>
+        
+    </ul>
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+        // inheritence between the  static  and dynamic objects---------------------
+
+
+            schoolDetails = {
+                schoolName : "Wonderland",
+                board      : "Up Board",
+                address    : "Lcknow"
+            }
+
+            var readStudentData = ()=>{
+
+            
+            studentDetails = Object.create(schoolDetails);
+
+            studentDetails.FetchData = function (){
+                console.log("School Name - " + this.schoolName);
+                console.log("Board - " + this.board);
+                console.log("Address - " + this.address);
+                console.log("Student Name - " + this.name);
+                console.log("Age - " + this.age);
+                console.log("Gender - " + this.gender);
+                console.log("class - " + this.class);
+                console.log( studentDetails.name);
+                
+            }
+            
+            studentDetails.name = document.querySelector(".sname ").value;
+         
+            studentDetails.age = document.querySelector(".sage ").value;
+            studentDetails.gender = document.querySelector(".sgender ").value;
+            studentDetails.class = document.querySelector(".sclass").value;
+
+
+            studentDetails.FetchData();
+
+        }
+
+
+    // Summry
+        // first we created oject--> schoolDetails 
+        //then Function --> readStudentData
+        //inside Function i create object  -->studentDetails and function -->FetchData
+        
+        // schoolDetails = {
+        //     ------
+        //     ----
+        // }
+
+
+        // readStudentData()=>{
+        //     studentDetails = Object.create(schoolDetails);
+
+        //     FetchData = function (){
+        //         -------
+        //         -----
+        //     }
+
+        //     ---------
+        //     ---------
+
+
+        //       studentDetails.FetchData(); 
+        // }
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

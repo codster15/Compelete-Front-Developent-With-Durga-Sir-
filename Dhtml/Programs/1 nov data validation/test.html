@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color:#161616 ;
+        }
+        ul{
+            margin: 10px;
+            padding: 10px;
+            margin-left: 0px;
+        }
+        li{
+            /* border: 1px solid rgb(31, 181, 240); */
+            margin: 10px;
+            padding: 10px;
+            width: 800px;
+            list-style: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+  
+        }
+        .Show{
+            color: rgb(2, 211, 2);
+            font-size: 21px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Name : <input type="text" id="name"></li>
+        <li>Show Name : <span class="Show"></span> </li>
+        <li><input type="button" value="Submit" id="" onclick="storevar();"></li>
+    </ul>
+
+    <script>
+      
+      var storevar = ()=>{
+        var showname = document.querySelector("#name").value;    // 
+        showdata(showname);
+      }
+
+        var showdata = (showname)=>{
+            
+            document.querySelector(".Show").innerHTML = showname;
+            console.log(showname);
+        }
+    </script>
+</body>
+</html>
+

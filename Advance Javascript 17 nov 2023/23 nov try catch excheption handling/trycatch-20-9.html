@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            border: 1px solid #ccc;
+            text-align: center;
+            margin: 20px ;
+            padding: 10px;
+            color: blueviolet;
+            font-family: 'Playpen Sans', cursive;
+        }
+        .thanksblock,
+        .taskclass{
+            border: 1px solid;
+            text-align: center;  
+            width: 500px ;
+            padding:70px ;
+            margin: 20px auto;
+          
+        }
+
+        .thanksblock{
+          background-color: green;
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Task manager</h1>
+    <div>
+        <input type="text" placeholder="Enter Name here" class="username">
+        <input type="button" value="Save User Name " class="savename" onclick="saveUserName();">
+        <input type="button" value="Create Task Container " onclick="taskcontainer();">
+        <input type="button" value="Get Today Task" onclick="getTodayTask();">
+    </div>
+
+    <div class="TaskBlock">
+
+    </div>
+
+    <div class="thanksblock"></div>
+
+    <script>
+
+
+var tasklist = [
+    "test the project ",
+    "Do the development",
+    "find the error in current project ",
+    "Finish the current project"
+
+]
+
+var getusername;
+
+ var  saveUserName = function(){
+  getusername = document.querySelector(".username").value;
+    console.log(getusername);
+    document.querySelector(".thanksblock").style.display = "none";
+ }
+ 
+
+  var taskcontainer = function(){
+    var containerTask = document.createElement("div");
+    containerTask.setAttribute("id" , " taskId");
+    containerTask.setAttribute("class" , "taskclass");
+
+    document.querySelector(".TaskBlock").append(containerTask);
+
+ }
+
+  var getTodayTask = function(){
+
+    var getrandom = Math.floor(Math.random()*tasklist.length);
+   var task = tasklist[getrandom];
+
+   try{
+    document.querySelector(".taskclass").innerHTML = "Mr."+ getusername + "Your today's task is " +  task;
+   } catch(error){
+        alert("please click on the create the Task Container to get the task ")
+   }
+ 
+    showthanksMsg();
+
+
+
+}
+
+ var showthanksMsg = function (){
+
+    setTimeout(()=>{var msg  = " Thaks for using out application";
+    document.querySelector(".thanksblock").innerHTML = msg;
+    document.querySelector(".thanksblock").style.display = "block";} , 3000);
+    
+ }
+
+    </script>
+</body>
+</html>

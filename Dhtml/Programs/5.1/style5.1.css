@@ -1,0 +1,55 @@
+.head{
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.mainContainer{ 
+    border: 1px solid;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+
+}
+
+.pdetails{
+    border: 1px solid;
+    width: 250px;
+    margin: 10px;
+    padding: 5px;
+    float: left;
+
+}
+
+.pdetails li{
+
+     border: 1px solid #ccc;
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+
+
+}
+
+img{
+    height: 100px;
+    width: 150px;
+}
+
+.before{
+    text-decoration: line-through;
+
+}
+
+.after{
+    color: rgb(5, 185, 5);
+    font-weight: bold;
+}
+
+.companycolor{
+    color: red;
+    font-weight: bolder;
+}

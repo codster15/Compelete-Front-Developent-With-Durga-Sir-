@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      var playerInfo =  (()=>{
+
+        var username = "Surya kumar Yadav"
+
+        var showdata = ()=>{
+            var first = "Uttar" 
+            var second = "Pradesh"
+
+            var total  = first + second
+            console.log(total);
+
+        }
+
+
+        return {
+            user_name : username,
+            sample (){
+                showdata();
+            }
+        }
+    })()
+
+
+
+
+        console.log(playerInfo.user_name);
+        playerInfo.sample();
+
+
+
+    </script>
+</body>
+</html>

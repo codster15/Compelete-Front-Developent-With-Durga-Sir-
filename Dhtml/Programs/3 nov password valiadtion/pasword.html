@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#0F0F0F ;
+       
+        }
+
+        ul{
+            
+            margin: 10px;
+            padding: 10px;
+            width: 800px;
+        
+            margin-left: 0px;
+
+        }
+        li{
+            list-style: none;
+            margin: 15px;
+            padding: 10px;
+            color: #00A9FF;
+            font-size: 25px;
+            font-weight: bolder;
+            margin-left: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+       .inputpassword{
+            font-size: 23px;
+            height: 10px;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+           
+           
+            border: 1px solid white;
+            
+        }
+
+        span{
+            color: rgb(187, 0, 0);
+            font-size: 14px;
+            font-weight: 100;
+
+        }
+        div{
+            position: absolute;
+           
+            top: 38px;
+            left: 530px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Password : 
+            <input type="text" class="inputpassword"  > <br>
+            <span class="errormsg"></span>
+            
+            <li>
+                confirm Password :
+                <input type="text" class="inputpassword" id="confirmpassword"><br>
+                <span class="confirmError"> </span>
+            </li>
+
+        </li>
+
+        <li><input type="button"  value="Submit" onclick="return PasswordValidate();"></li>
+    </ul>
+
+    <script>
+         
+          
+       
+       
+
+          var PasswordValidate = ()=>{
+            var pass = document.querySelector(".inputpassword").value;
+            var confirmpassword = document.querySelector("#confirmpassword").value;
+
+            
+            console.log(pass);
+            console.log(confirmpassword);
+
+            if( pass == "" ){
+                document.querySelector(".errormsg").innerHTML = " * password cannot empty";
+
+                return false
+            }
+
+            if( pass.length <= 5){
+                document.querySelector(".errormsg").innerHTML = " * Enter  password between 5 to 20";
+
+                return false
+            }
+
+            if( pass.length >= 20){
+                document.querySelector(".errormsg").innerHTML = " *   password should less then 20 character";
+
+                return false
+            }
+
+            if( ){
+
+            }
+
+                
+            
+
+            //confirm password
+
+            if(pass != confirmpassword){
+
+                document.querySelector(".confirmError").innerHTML = " * Password not matched";
+                return false
+            }else{
+                return true;
+            }
+             
+            }
+
+
+    </script>
+
+
+</body>
+</html>

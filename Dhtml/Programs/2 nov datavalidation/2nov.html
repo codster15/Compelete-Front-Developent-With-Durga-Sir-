@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data validation</title>
+<style>
+    body{
+        background-color: #272829 ;
+    }
+    ul{
+        
+        margin: 10px;
+        padding: 10px;
+    }
+ li{
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    color: #6D9886;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+
+ }
+ span{
+    color: red;
+    display: none;
+    font-size: 14px;
+    margin-left: 20px;
+ }
+ input{
+    background-color: #161616;
+    border: 1px solid #6D9886 ;
+    color: #F7F7F7;
+    height: 20px;
+    width: 200px;
+    padding: 5px;
+    font-size: 18px;
+ }
+.button{
+                    border: 0px solid #0866ff ;
+                    height: 50px;
+                    width: 150px;
+                    background-color: #0866ff;
+                    color: white;
+                    border-radius: 20px;
+                    font-size: 21px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    margin-left: 110px;
+}
+
+h2{
+    color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    display: inline;
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+    
+        <ul>
+            <li>Name : <input type="text" id="name"  onkeypress="return validate(event , '#alertname');" maxlength="20"> <br><span id="alertname"> * only Characters allowed</span> <br> <span class="namemust"> ! this field is required </span></li>
+
+
+            <li>Roll No: <input type="text" id="RollNo" onkeypress="return validateRollno(event);" maxlength="10"> <span id="alertRoll"> * Only number allowed</span></li>
+
+
+            <li>E-mail : <input type="email" id="Email" onkeypress="return validateEmail(event);"> <span id="alertemail">  * use @, use correct email format</span></li>
+
+
+
+            <li><input type="button" class="button" value="Submit" onclick="showdata();"></li>
+        </ul>
+
+
+        <ul class="showul">
+            <li>Name -          <h2 class="showname"></h2></li>
+            <li>Roll Number -   <h2 class="showrollnumber"></h2>  </li>
+            <li>E-mail -        <h2 class="showEmail"></h2> </li>
+
+        </ul>
+    
+   
+    <script>
+
+
+var showdata = ()=>{
+
+
+
+    document.querySelector('#alertname').style.display = "none";
+    document.querySelector('#alertRoll').style.display = "none";
+    document.querySelector('#alertemail').style.display = "none";
+
+
+
+
+//  fetching the data
+var showname1 = document.querySelector("#name").value;
+var showrollnumber2 = document.querySelector("#RollNo").value;
+var showEmail = document.querySelector("#Email").value;
+
+
+
+
+if(showname1 != 0){
+
+    document.querySelector(".showname").innerHTML = showname1;
+
+    return true;
+}else{
+    document.querySelector('.namemust').style.display = "block";
+    return false;
+}
+
+
+
+
+
+
+// storing and showing back to webpage
+
+document.querySelector(".showrollnumber").innerText = showrollnumber2;
+document.querySelector(".showEmail").innerText = showEmail;
+
+}
+
+
+
+            //for name validatiion
+
+
+        var validate = (event ,ElementId)=>{
+            if(event.keyCode >= 65 && event.keyCode <= 90 ){
+
+                document.querySelector(ElementId).style.display = "none";
+                    return true ;
+            }else if(event.keyCode >= 97 && event.keyCode <= 122){
+
+                document.querySelector(ElementId).style.display = "none";
+                    return true;
+
+            }else if(event.keyCode == 32){
+
+                document.querySelector(ElementId).style.display = "none";
+                    return true;
+
+
+            }else{
+                document.querySelector(ElementId).style.display = "block";
+                return false;
+            }
+        }
+
+
+
+
+
+        
+            //for Roll Number validatiion
+
+            
+        var validateRollno = (event )=>{
+            if(event.keyCode >= 48 && event.keyCode <= 57 ){
+
+                document.querySelector("#alertRoll").style.display = "none";
+                return true
+            }else {
+
+                document.querySelector("#alertRoll").style.display = "block";
+                return false
+            }
+        }
+
+
+
+
+
+           //for Email -  validatiion
+
+        var validateEmail = (event)=>{
+
+            if(event.keyCode >= 65 && event.keyCode <= 90 ){                        //A to Z
+
+                document.querySelector("#alertemail").style.display = "none";
+                    return true ;
+                }else if(event.keyCode >= 97 && event.keyCode <= 122){              // a to z
+
+                document.querySelector("#alertemail").style.display = "none";
+                    return true;
+
+                }else if(event.keyCode == 64 || event.keyCode == 46  ){                                      // @
+
+                document.querySelector("#alertemail").style.display = "none";
+                    return true;
+
+
+                }else  if(event.keyCode >= 48 && event.keyCode <= 57 ){             // 0 to 9 
+
+                    document.querySelector("#alertemail").style.display = "none";
+                    return true
+                    }else{
+
+                        document.querySelector("#alertemail").style.display = "block";
+                        return false                                                      // return false
+                    }
+
+
+
+        }
+   
+
+
+
+
+
+
+          // showing result back to  web page
+       
+   
+   </script>
+</body>
+</html>

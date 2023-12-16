@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      border: 2px;
+
+      margin-top: 100px;
+      border: 2px solid #ccc;
+      padding: 10px;
+    }
+
+    .box li input {
+      border: 1px solid;
+      height: 20px;
+      width: 300px;
+      margin: 20px;
+      padding: 10px;
+    }
+
+    .box li span {
+      color: red;
+
+      font-size: 15px;
+      display: none;
+    }
+
+    li {
+      list-style: none;
+      border: 1px solid;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .Submit .bsubmit {
+      width: 150px;
+      height: 50px;
+      background-color: #ccc;
+      padding: 10px;
+      border-radius: 15px;
+      color: white;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+    .fullname {
+      color: rgb(0, 12, 184);
+      font-size: 25px;
+    }
+
+    .total {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <li>
+      First Name :
+      <input type="text" id="fname" onkeypress="return errorchk(event , '#ferror');" placeholder="Enter First Name Here" maxlength="8" /><span class="s1" id="ferror">
+        * Enter only characters</span>
+    </li>
+
+
+
+    <li>
+      Last Name : <input type="text" id="lname" onkeypress="return errorchk(event , '#lerror')" placeholder="Enter Last Name Here" maxlength="8"  /><span class="s2" id="lerror">
+        * Enter only characters</span>
+    </li>
+
+
+
+
+
+
+    <li class="total">Full Name : <span class="fullname"> </span></li>
+    <li>
+      <div class="Submit">
+        <input type="button" value="Submit" class="bsubmit" onclick="return getval();" />
+      </div>
+    </li>
+  </div>
+
+  <script>
+
+
+    var errorchk = (event, elementId) => {
+
+      if  ( event.keyCode >= 65 && event.keyCode <= 90    ||  event.keyCode >= 97 && event.keyCode <= 122 ) {
+
+
+        
+
+          document.querySelector(elementId).style.display = "none";
+             return true;
+
+        }else{
+
+          document.querySelector(elementId).style.display = "block";
+          return false
+        }
+   
+
+
+
+
+
+
+
+      
+    };
+  </script>
+</body>
+
+</html>
+
+
+<!-- if (event.keyCode >= 65 && event.keyCode <= 90) {
+  document.querySelector(".s1").style.display = "none";
+  return true;
+} else {
+  document.querySelector(".s1").style.display = "block";
+  return false;
+} -->

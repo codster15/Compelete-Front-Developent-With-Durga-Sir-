@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // OBJECT 1 -> CREATED
+      var student1 = {
+        name: "Amit bhadana",
+        age: 16,
+        gender: "male",
+        class: "VIII",
+      };
+    
+          // OBJECT 2 -> CREATED
+      var student2 = {
+        name: "Carry Minati",
+        age: 14,
+        gender: "male",
+        class: "V",
+      };
+    
+          // OBJECT 3 -> CREATED
+      var student3 = {
+        name: "Teena",
+        age: 10,
+        gender: "female",
+        class: "III",
+      };
+    
+    
+    //   CLASS CREATED
+      class Studentdetails {
+        constructor(sdetails) {
+          this.name = sdetails.name;
+          this.age = sdetails.age;
+          this.gender = sdetails.gender;
+          this.class = sdetails.class;
+          this.school = "Wonderland";
+          this.location = "lucknow";
+          this.board = "Up board";
+        }
+    
+    
+        // METHOD CREATED INSIDE THE CLASS
+        ShowStudentDetails() {
+          console.log("Name - " + this.name);
+          console.log("Age - " + this.age);
+          console.log("Gender - " + this.gender);
+          console.log("Class - " + this.class);
+          console.log("School - " + this.school);
+          console.log("Location - " + this.location);
+          console.log("Board - " + this.board);
+        }
+    
+    
+        // ANOTHER MEATHOD CREATED INSIDE THE CLASS
+        line() {
+          console.log(
+            "=========================================="
+          );
+        }
+      }
+    
+      var firstStudent = new Studentdetails(student1);   //OBJECT CREATED AS (FIRSTSTUDENT) FROM THE (STUDENTDETAILS) CLASS
+      var SecondStudent = new Studentdetails(student2); //OBJECT CREATED AS (SECONDTUDENT) FROM THE (STUDENTDETAILS) CLASS
+      var thirdStudent = new Studentdetails(student3);   //OBJECT CREATED AS (THIRDSTUDENT) FROM THE (STUDENTDETAILS) CLASS
+    
+      firstStudent.ShowStudentDetails();
+      firstStudent.line();
+      SecondStudent.ShowStudentDetails();
+      SecondStudent.line();
+      thirdStudent.ShowStudentDetails();
+    </script>
+
+</body>
+</html>

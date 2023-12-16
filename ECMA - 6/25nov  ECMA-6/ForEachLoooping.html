@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //     old method
+        var marks = [23,11,45,67,87,90];
+        var total = 0;
+        for(var i = 0 ; i < marks.length ; i ++){
+            total += marks[i];
+            
+        }
+        console.log(total);
+
+
+
+
+        // new method when we have alterate all the values then recomanded
+        marks.forEach((value, index)=>{
+            total += value;
+
+            console.log(index);
+        })
+
+   
+    </script>
+    
+</body>
+</html>

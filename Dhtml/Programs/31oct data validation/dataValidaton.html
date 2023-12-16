@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box{
+            border: 2px solid;
+            width: 450px;
+            margin: 10px auto;
+           
+            
+           
+
+        }
+        ul{
+
+           margin-left:-35px;
+           width: 400px;
+
+               
+        }
+
+        li{
+            list-style: none;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            margin-left: 10px;
+
+        }
+        .l1{
+            text-align: center;
+            border: 0px;
+        }
+        .hide{
+            display: none;
+        }
+
+        .alert{
+            color: red;
+            font-size: 12px;
+            margin-left: 150px;
+            display: none;
+        }
+
+        .alert2{
+            color: red;
+            font-size: 12px;
+            margin-left: 150px;
+            display: none;
+        }
+
+
+    </style>
+    
+<div class="box">
+     <ul>
+        <li> Entere the First Value <input type="text" id="fval" 
+            onkeypress="return validatedata(event, '#fvalalert');" placeholder="enter the number" maxlength="5"><br><span class="alert" id="fvalalert">*enter only number</span>
+        </li>
+
+
+
+
+        <li>Enter the Second Value <input type="text" id="sval"
+            onkeypress="return validatedata(event, '#svalalert');" placeholder="enter the number"  maxlength="5"><br><span class="alert2" id="svalalert">*enter only number</span>
+        </li>
+
+       
+       
+       
+        <li class="hide">Sum of number is = <span class="sumval"></span></li>
+
+        <li class="l1"><input type="button" value="Do Additon" name="" id="" onclick="inputValue();" ></li>
+     </ul>
+</div>
+
+<script>
+
+    
+       var  inputValue  = () => {
+                        var firstValue = document.querySelector("#fval").value;
+                        firstValue = parseInt(firstValue);
+
+                        var secondValue = document.querySelector("#sval").value;
+                        secondValue = parseInt(secondValue);
+
+                        var sum =  firstValue + secondValue;
+                        
+                        document.querySelector(".hide").style.display ="block";
+                        document.querySelector(".sumval").innerText = sum;
+
+                    
+                        console.log(sum);
+        }
+  
+        var validatedata = (event, elementId) =>{
+  
+
+                    if(event.keyCode >= 48 && event.keyCode <= 57){
+                        document.querySelector(elementId).style.display = "none";
+                    return true;
+                }else{
+                    document.querySelector(elementId).style.display = "block";
+                    return false;
+                }
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+
+
+=====================================================================================
+
+
+.          palindrome number from array list using json function
+
+
+
+
+
+
+<body>
+    <body>
+
+        <div><h1>Palindrome number => <span id="yes"> </span></h1>
+    
+            <h1>Not a Palindrome number => <span id="Not"> </span></h1>
+        </div>
+        
+        <script>
+    
+            var palindrome = {
+               
+               arr : [141,121,1331,123321,1441,1233,189981,1519],
+               not : "sorry",
+              
+               str : '',
+                 perform : function (){
+    
+                    for(var i = 0 ; i < this.arr.length ;  i++){
+                        
+                        var given = this.arr[i];
+                        var no = given;
+    
+                        while(no > 0){
+    
+                    var rem  = no % 10;   
+    
+                            no = no / 10;
+                            no = parseInt(no);
+    
+                            this.str = this.str + rem;
+    
+    
+                        }
+    
+                            if(this.str == given){
+    
+                                console.log("palindrome no = " + given );
+    
+                            }else{
+                                
+                                console.log(" Not a palindrome no = " + given);
+                            }
+    
+                          this.str = " ";
+                            
+                     }
+            
+                }    
+            
+            }
+    
+    
+            palindrome.perform();
+    
+    
+    
+    
+    
+        </script>
+    
+    </body>
+</body>
+</html>
+
+
+==============================================================================================================
+
+
+
+
+
+.          palindrome number from array list using json function
+.          dynamic ALLOCATIONS of array
+
+
+<script>
+
+
+        
+    var palindrome = {
+       
+       arr : [],
+       not : "sorry",
+      
+       str : '',
+         perform : function (){
+
+            for(var i = 0; i <= 5; i++){
+
+                this.arr[i] = prompt("enter number");
+                
+                this.arr[i] = parseInt(this.arr[i]);
+
+            };
+
+
+
+            for(var i = 0 ; i < this.arr.length ;  i++){
+                
+                var given = this.arr[i];
+                var no = given;
+
+                while(no > 0){
+
+            var rem  = no % 10;   
+
+                    no = no / 10;
+                    no = parseInt(no);
+
+                    this.str = this.str + rem;
+
+
+                }
+
+                    if(this.str == given){
+
+                        console.log("palindrome no = " + given );
+
+                    }else{
+                        
+                        console.log(" Not a palindrome no = " + given);
+                    }
+
+                  this.str = " ";
+                    
+             }
+    
+        }    
+    
+    }
+
+
+    palindrome.perform();
+
+
+
+
+
+</script>
+
+
+============================================================================================================
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //Inheritence between Classes
+
+        var studentx = {};
+        studentx.Stuentname = "Aman ";
+        studentx.StudentAge = 21;
+        studentx.StudentGender = "Male";
+
+
+        var schooldetails = {}
+
+        schooldetails.Sname = "Shine Way";
+        schooldetails.Sboard = " Up board ";
+        schooldetails.Slocation = "Mumbai";
+        
+
+
+
+        class school {
+
+            constructor(obj1){
+                this.Sname = obj1.Sname;
+                this.Sboard = obj1.Sboard;
+                this. Slocation = obj1.Slocation;
+            }
+
+            showSchool(){
+                console.log("School Name - " + this.Sname)
+                console.log("Board - " + this.Sboard)
+                console.log("Location - " + this.Slocation)
+            }
+
+        }
+
+        class student extends school{
+
+            constructor(obj , obj1){
+                super(obj1);
+                this.Stuentname = obj.Stuentname;
+                this.StudentAge = obj.StudentAge;
+                this. StudentGender = obj.StudentGender;
+            }
+
+            showStudent(){
+                console.log("Student Name - " + this.Stuentname)
+                console.log("Student Age - " + this.StudentAge)
+                console.log("Student Gender - " + this.StudentGender)
+            }
+
+
+        }
+
+        var Studentdata = new student(studentx ,schooldetails);
+
+        // console.log(Studentdata);
+        Studentdata.showStudent();
+        Studentdata.showSchool();
+
+
+    </script>
+
+
+</body>
+</html>
