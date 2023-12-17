@@ -576,4 +576,188 @@ time - starting
 </html>
 
 
-====================================================================================================================================
+===========================================================================================================================
+
+
+
+
+.                                                       Navigator object
+
+lec - 13-10-22
+
+note - Navigator object holds extra information of currect web browser and operating system of current machine.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+            console.log(navigator);
+            var checkCrome = (navigator.vendor == "Google Inc.") ? true : false;
+    
+            if(checkCrome){
+                alert("This is chrome browser")
+            }else{
+                alert("Not a chrome a browser")
+            }
+    </script>
+
+</body>
+</html>
+
+
+===========================================================================================================================
+
+
+
+.                                                         Navigator Geolocation 
+
+lec - 13-10-22
+time -23:00
+
+
+
+note-->  We get his current location through latitude and longitute.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstration Geolocation</title>
+</head>
+<body>
+    
+
+    <script>
+
+        console.log(navigator.geolocation);
+
+        navigator.geolocation.getCurrentPosition((point) =>{  // we get his current location through latittude and longitute
+            console.log(point);
+        })
+
+    </script>
+
+
+</body>
+</html>
+
+
+===========================================================================================================================
+
+
+.                                                   W E B    W O R K E R S
+
+lec  - 13-10-22
+time - 50:00
+
+
+NOTE --> WITH THE HELP of Web workers we can acheieve multitasking to improve the performance of the web page .
+        We give separte-seprate task to differnt different js file --> this process is know as web workers.  
+        Javascript is not supporting multitasking directly .But with the help of ( Web Workers ) we can acheive multitasking.     
+
+
+
+
+
+----------------------------    html file  below   ---------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container div{
+            border: 1px solid;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+    <body>
+
+        <header>Date and time -
+            <span id="storeTime"></span>
+        </header>
+        <div class="container">
+        
+            
+        </div>
+        
+    <script src="app.js"></script>                                                                                                            
+    </body>
+</html>
+
+
+
+--------------------------         app.js file below   ------------------------------------------
+
+
+
+<script>
+    var count = 1;
+setInterval(() => {
+    var divtag = document.createElement("div")
+
+
+    divtag.innerHTML = "Block " + count;
+
+    document.querySelector(".container").append(divtag);
+    count++;
+
+}, 1000)
+
+
+
+
+// 
+
+    
+var webWorker = new Worker("webWorker.js")
+
+webWorker.onmessage = function (event){
+    document.querySelector("#storeTime").innerHTML = event.data;
+}
+</script>
+
+
+
+-------------------------------------   web Worker.js filew below    -----------------------------
+
+
+<script>
+
+
+var getDateAndTime = () => {
+    var mydate = new Date()
+  var datewithtime = mydate.getDate() + "/"+ (mydate.getMonth() + 1) + "/" +  mydate.getFullYear() +  "  &  " + 
+    mydate.getHours() + ":" + mydate.getMinutes() + ":" + mydate.getSeconds();
+    console.log(datewithtime);
+ 
+    postMessage(datewithtime);
+    
+}
+
+setInterval(()=>{
+    getDateAndTime();
+
+
+} , 1000)
+</script>
+
+
+
+============================================================================================================================
