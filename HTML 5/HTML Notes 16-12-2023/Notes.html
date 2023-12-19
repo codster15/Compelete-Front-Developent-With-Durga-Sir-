@@ -20,13 +20,6 @@ HTML 5
     
 
 
-
-
-
-
-
-
-
 =======================================================================================================================
 
     .                                             Local storage
@@ -661,9 +654,9 @@ lec  - 13-10-22
 time - 50:00
 
 
-NOTE --> WITH THE HELP of Web workers we can acheieve multitasking to improve the performance of the web page .
-        We give separte-seprate task to differnt different js file --> this process is know as web workers.  
-        Javascript is not supporting multitasking directly .But with the help of ( Web Workers ) we can acheive multitasking.     
+NOTE --> - WITH THE HELP of Web workers we can acheieve multitasking to improve the performance of the web page .
+.        -  We give separte-seprate task to differnt different js file --> this process is know as web workers.  
+.        - Javascript is not supporting multitasking directly .But with the help of ( Web Workers ) we can acheive multitasking.     
 
 
 
@@ -760,4 +753,88 @@ setInterval(()=>{
 
 
 
+
 ============================================================================================================================
+
+
+
+.                                           Drang and drop Events
+
+lec - 15-10-22
+time - 18:00
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Drag And Droup Events :  </title>
+
+    <style>
+        .container{
+            height: 400px;
+            width: 600px;
+            border: 1px solid;
+            margin: 10px auto;
+
+        }
+        img{
+            height: 100px;
+            width: 150px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+        <body>
+            
+                <div class="container" ondrop="Elementgotdroup(event)" ondragover="dragIsOver(event)"></div>
+
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_1" alt="" ondragstart="dragStart(event)">
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_2" alt="" ondragstart="dragStart(event)">
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_3" alt="" ondragstart="dragStart(event)">
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_4" alt="" ondragstart="dragStart(event)">
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_5" alt="" ondragstart="dragStart(event)">
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_6" alt="" ondragstart="dragStart(event)">
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_7" alt="" ondragstart="dragStart(event)">
+                <img src="file:///C:/Users/deepa/Downloads/chevrolet_camaro_coupe_muscle_car_red_car_hd_cars.jpg" id="Image_8" alt="" ondragstart="dragStart(event)">
+
+
+
+                <script>
+
+                    var Elementgotdroup = (event)=>{
+                        event.preventDefault();
+                       console.log( event.target);
+                        console.log("Element goty drop")
+                        event.target.append(document.querySelector(getimageId));
+                    }
+
+
+                    var dragIsOver = (event)=>{
+                        event.preventDefault();
+                        console.log("Drag is over")
+                    }
+
+                    var getimageId ;
+                    var dragStart = (event)=>{
+                        console.log("Drag is Starting");
+                 
+                       getimageId =  "#"+ event.target.getAttribute("id") ;
+                        
+                        console.log(  getimageId)
+                     
+                    }
+
+                </script>
+            
+        </body>
+</html>
+
+
+=====================================================================================================
+
+
