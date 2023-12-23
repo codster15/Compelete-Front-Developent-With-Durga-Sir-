@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <style>
+        body{
+            background-color: black;
+        }
+        img{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+            transition: .5s;
+
+            
+           
+        }
+
+        img:hover{
+            transform: scale(1.2,1.2);
+           border: 2px solid white;
+            border-radius: 10px;
+        }
+        .navBar{
+
+            display: flex;
+            margin-top: 60px;
+            display: none;
+
+        }
+
+
+       .navBar div{
+            border: 1px solid;
+            padding: 5px;
+            margin: 5px;
+           text-align: center;
+           width: 150px;
+           background-color: white;
+        }
+
+        .navBar div:hover{
+            background-color: aquamarine;
+        }
+    
+        @media screen  and (max-width : 400px){
+            
+            .navBar {
+                flex-direction: column;
+            }
+
+            .navBar div {
+                width: 200px;
+            }
+        }
+        
+    </style>
+
+</head>
+    <body>
+        <img src="file:///C:/Users/deepa/Downloads/burger-menu.png" alt="" id="imgtag">
+
+        <div class="navBar">
+       
+            <div>Home</div>
+            <div>Careers</div>
+            <div>Our Clients</div>
+            <div>Services</div>
+            <div>Contact us</div>
+            <div>Address</div>
+        </div>
+
+
+
+        <script>
+            var imgtag = document.querySelector("#imgtag")
+            var divtag = document.querySelector(".navBar")
+
+            imgtag.addEventListener("click", () => {
+    // Toggle the display property of the .navBar
+    if (divtag.style.display === "none" || divtag.style.display === "") {
+        divtag.style.display = "flex";
+    } else {
+        divtag.style.display = "none";
+    }
+})
+
+        </script>
+    </body>
+</html>

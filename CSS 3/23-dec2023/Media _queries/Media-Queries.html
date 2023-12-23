@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="" media="min">
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        header, footer ,main{
+            margin: 10px;
+            border: 1px solid;
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            background-color: white;
+
+        }
+
+         main{
+         top: 50px;
+         bottom: 50px ;
+        } 
+
+        footer{
+            bottom: 5px;
+        }
+
+        .navBar{
+            padding: 10px;
+            background-color: aqua;
+            width: 600px;
+            margin: 20px;
+        }
+        .addblock{
+            border: 1px solid;
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        @media screen and  (max-width : 400px) {
+                .navBar{
+                    background-color: aquamarine;
+                    width: 220px;
+                    margin: 5px;
+                }
+
+                .addblock{
+                    display: none;
+                }
+        }
+
+
+    </style>
+</head>
+
+
+    <body>
+        
+            <header>Shopping Page</header>
+
+            <main> 
+                <div class="navBar">Welcome to shopping page </div>
+                <div class="addblock">
+                    <marquee behavior="" direction="right">Adds are about to come</marquee>
+                </div>
+            </main>
+
+            <footer> @copyrigth 2022 </footer>
+
+
+
+    </body>
+
+
+</html>
