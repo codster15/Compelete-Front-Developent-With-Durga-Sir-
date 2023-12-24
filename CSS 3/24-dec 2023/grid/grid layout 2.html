@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout - 2 </title>
+<style>
+
+    body{
+    margin: 0px;
+    background-color: rgb(34, 33, 33);
+    }
+
+.main{
+   
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 20px;
+    height: 95vh;
+    align-content: center;
+}
+
+.main div{
+   display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    text-align: center;
+    font-family: cursive;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+}
+
+.doubletop{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #FF8080;
+}
+
+.navBar{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: #F99B7D;
+}
+.test3{
+    background-color: aquamarine;
+}
+
+.test4{
+    background-color: aqua;
+}
+
+
+</style>
+
+</head>
+    <body>
+        <div class="main">
+            <div class="item doubletop">I just got double</div>
+            <div class="item navBar"> NavBar </div>
+            <div class="item test3">3</div>
+            <div class="item test4">4</div>
+          
+   
+        </div>
+    </body>
+</html>
