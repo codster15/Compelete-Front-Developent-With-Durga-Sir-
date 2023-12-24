@@ -887,3 +887,147 @@ beautifull programm
 
 
 
+.                                   Column Layout 
+
+lec - Just after 26-10-22
+time - start
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title> Demonstrating Column Layout Content </title>
+    <style>
+        p{
+            /* column-count: 4; */
+            /* column-width: 200px;
+            column-gap: 10px; */
+            /* column-rule: 3px solid #ff0808; */
+        }
+    </style>
+</head>
+    <body>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt excepturi, velit, sequi temporibus unde modi voluptates aspernatur quo molestias, expedita accusamus tempora minus quod blanditiis laborum asperiores culpa enim obcaecati?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt excepturi, velit, sequi temporibus unde modi voluptates aspernatur quo molestias, expedita accusamus tempora minus quod blanditiis laborum asperiores culpa enim obcaecati?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt excepturi, velit, sequi temporibus unde modi voluptates aspernatur quo molestias, expedita accusamus tempora minus quod blanditiis laborum asperiores culpa enim obcaecati?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt excepturi, velit, sequi temporibus unde modi voluptates aspernatur quo molestias, expedita accusamus tempora minus quod blanditiis laborum asperiores culpa enim obcaecati?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt excepturi, velit, sequi temporibus unde modi voluptates aspernatur quo molestias, expedita accusamus tempora minus quod blanditiis laborum asperiores culpa enim obcaecati?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt excepturi, velit, sequi temporibus unde modi voluptates aspernatur quo molestias, expedita accusamus tempora minus quod blanditiis laborum asperiores culpa enim obcaecati?
+        </p>
+        
+    </body>
+</html>
+
+
+=========================================================================================
+
+
+
+.                                     G r i d Layout
+
+
+lec - Just after 26-10-22
+
+
+notes -->
+
+CSS 3 GRid Layout
+
+    container : 
+            grid-template-columns:200px 100px 150px ;
+            grid-template-rows: 200px 200px auto;
+            justify-content: center/ space-evenly / space - around / space- between / start / end ;
+            align-content: center /space-evenly / space - around / space- between / start / end ;
+            column-gap: 10px;
+            row-gap: 10px;
+
+
+    Items : 
+            grid-column-start : 1;
+            grid-column-end : 3;
+            grid-column : 1 / 3;
+            grid-row : 1 / 4;
+
+            grid-area : grid-row-start / grid-column-start / grid -row-end / grid grid-column-end
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title> Demonstraion of grid </title>
+             
+                    <style>
+                        
+                        /* body {
+                        margin: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-height: 100vh;
+                       } */
+            
+                        .container{
+                            display: grid;
+                            grid-template-columns:200px 200px 150px 150px ;
+                            grid-template-rows: 150px 200px 150px;
+                            column-gap: 10px;
+                            row-gap: 10px;
+                            /* justify-content: center;
+                            align-content: center; */
+                        
+                     
+            
+                            /* justify-content: space-evenly; */
+                            /* justify-content: space-around; */
+                            /* justify-content: space-between; */
+                  
+            
+                            
+                            
+                           
+                            
+                        }
+            
+                        .container div{
+                            border: 1px solid;
+                            padding: 5px;
+                            text-align: center;
+                        }
+            
+                        .item1{
+                            /* grid-column-start: 1;
+                            grid-column-end: 4; */
+                            /* grid-column:2/4 ; */
+                            grid-row: 1/3;
+                        }
+                    </style>
+                
+            </head>
+            
+                <body>
+            
+                 
+                        <div class="container">
+                            <div class="item1">Box1</div>
+                            <div>Box2</div>
+                            <div>Box3</div>
+                            <div>Box4</div>
+                            <div>Box5</div>
+                            <div>Box6</div>
+                            <div>Box7</div>
+                            <div>Box8</div>
+                            <div>Box9</div>
+                      
+                        </div>
+                   
+            
+                </body>
+            
+            </html>
+            ======================================================================================================

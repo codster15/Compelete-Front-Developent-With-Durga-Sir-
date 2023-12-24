@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Demonstraion of grid </title>
+ 
+        <style>
+            
+            /* body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+           } */
+
+            .container{
+                display: grid;
+                grid-template-columns:200px 200px 150px 150px ;
+                grid-template-rows: 150px 200px 150px;
+                column-gap: 10px;
+                row-gap: 10px;
+                /* justify-content: center;
+                align-content: center; */
+            
+         
+
+                /* justify-content: space-evenly; */
+                /* justify-content: space-around; */
+                /* justify-content: space-between; */
+      
+
+                
+                
+               
+                
+            }
+
+            .container div{
+                border: 1px solid;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .item1{
+                /* grid-column-start: 1;
+                grid-column-end: 4; */
+                /* grid-column:2/4 ; */
+                grid-row: 1/3;
+            }
+        </style>
+    
+</head>
+
+    <body>
+
+     
+            <div class="container">
+                <div class="item1">Box1</div>
+                <div>Box2</div>
+                <div>Box3</div>
+                <div>Box4</div>
+                <div>Box5</div>
+                <div>Box6</div>
+                <div>Box7</div>
+                <div>Box8</div>
+                <div>Box9</div>
+          
+            </div>
+       
+
+    </body>
+
+</html>
