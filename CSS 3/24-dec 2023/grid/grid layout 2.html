@@ -15,8 +15,8 @@
    
     margin: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4,1fr);
     gap: 20px;
     height: 95vh;
     align-content: center;
@@ -34,6 +34,32 @@
 }
 
 .doubletop{
+   
+    background-color: #FF8080;
+}
+
+.navBar{
+
+    background-color: #F99B7D;
+}
+
+.test3{
+    background-color: aquamarine;
+}
+
+.test4{
+    background-color: aqua;
+}
+
+
+@media (min-width:500px){
+
+    .main{
+        grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    }
+
+    .doubletop{
     grid-column-start: 1;
     grid-column-end: 3;
     background-color: #FF8080;
@@ -46,14 +72,7 @@
     grid-column-end: 4;
     background-color: #F99B7D;
 }
-.test3{
-    background-color: aquamarine;
 }
-
-.test4{
-    background-color: aqua;
-}
-
 
 </style>
 
