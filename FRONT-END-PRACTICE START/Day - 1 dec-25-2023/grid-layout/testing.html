@@ -1,0 +1,103 @@
+
+<!-------------------- -------------  <!-- Centering div using flex -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      border: 10px solid;
+    }
+
+    .centered-div {
+      width: 200px; /* Set the width as needed */
+      height: 200px; /* Set the height as needed */
+      background-color: lightgray;
+      text-align: center;
+      line-height: 200px; /* Equal to the height for vertical centering */
+    }
+  </style>
+</head>
+<body>
+  <div class="centered-div">Centered Content</div>
+</body>
+</html>
+
+<!-- ------------------------   <!-- Centering div using Grid --> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .centered-div {
+      width: 200px; /* Set the width as needed */
+      height: 200px; /* Set the height as needed */
+      background-color: lightgray;
+      text-align: center;
+      line-height: 200px; /* Equal to the height for vertical centering */
+    }
+  </style>
+</head>
+<body>
+  <div class="centered-div">Centered Content</div>
+</body>
+</html>
+
+
+
+
+<!-- ------------------------   <!-- Centering div Using Absolute Positioning -----> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      position: relative;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .centered-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px; /* Set the width as needed */
+      height: 200px; /* Set the height as needed */
+      background-color: lightgray;
+      text-align: center;
+      line-height: 200px; /* Equal to the height for vertical centering */
+    }
+  </style>
+</head>
+<body>
+  <div class="centered-div">Centered Content</div>
+</body>
+</html>
+
+
+
+==============================================================================================================
+
+
+

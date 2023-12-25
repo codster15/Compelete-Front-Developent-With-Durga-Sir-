@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      
+
+
+      body {
+        height: 95vh;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main {
+        margin: 10px;
+        height: 85vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(10 , 1fr);
+        gap: 30px;
+   
+      }
+
+
+    
+
+      /* --------------------------------- */
+      .header {
+        background-color: rgb(255, 91, 91);
+      }
+
+      .footer {
+        background-color: aquamarine;
+      }
+      .green {
+        background-color: rgb(24, 168, 24);
+      }
+      .lightblue {
+        background-color: rgb(20, 139, 236);
+      }
+      .voilet {
+        background-color: blueviolet;
+      }
+      .content{
+        background-color: rgb(226, 176, 9);
+      }
+      .navbar{
+        background-color: rgb(31, 31, 34);
+      }
+
+      @media (min-width:500px){
+
+.header,
+.footer {
+grid-column: 1/-1;
+}
+
+.navbar{
+grid-row: 2/5;
+grid-column: 4/5;
+}
+.content{
+grid-column: 1/4;
+grid-row: 3/5;
+}
+
+
+
+.main{
+height: 85vh;
+width: 100%;
+grid-template-columns: repeat(3, 1fr) 300px;
+grid-template-rows: 100px 1fr 1fr 1fr  100px;
+}
+
+}
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="items header"></div>
+      <div class="items green"></div>
+      <div class="items lightblue"></div>
+      <div class="items voilet"></div>
+      <div class="items navbar"></div>
+      <div class="items content"></div>
+ 
+      <div class="items footer"></div>
+    </div>
+  </body>
+</html>
