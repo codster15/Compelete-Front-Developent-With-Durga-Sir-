@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            transition: background-color 0.3s;
+            display: flex;
+            height: 97vh;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        .main{
+            margin: 50px;
+            
+            height: 30px;
+            width: 100px;
+            border: 2px solid  black;
+            border-radius: 20px;
+            position: absolute;
+            transition: background-color 0.3s;
+            box-shadow: 0px 0px 14px 1px #ccc;
+        
+
+        }
+
+        .circle{
+            height: 17px;
+            width: 17px;
+     
+            background-color:black;
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+            left: 5px;
+            transition: transform 0.3s ease-in-out;
+        
+        }
+
+ 
+
+
+    </style>
+</head>
+        <body>
+                <div class="main">
+                    <div class="circle"></div>
+                </div>
+        </body>
+
+        <script>
+            var circle = document.querySelector (".circle")
+            var main = document.querySelector (".main")
+
+
+           
+            var whiteUI = ()=>{
+                translate = 0;
+               document.querySelector(".circle").style.transform = 'translate(' + translate + 'px)';
+                main.style.backgroundColor = "white"
+                main.style.borderColor = "black"
+                circle.style.backgroundColor = "black"
+                
+                document.querySelector("body").style.backgroundColor = "white";
+               console.log("white ui ");
+                        
+            }
+
+                var blackUi = ()=>{
+                    translate = 70;
+               document.querySelector(".circle").style.transform = 'translate(' + translate + 'px)';
+                main.style.backgroundColor = "black"
+                main.style.borderColor = "white"
+                circle.style.backgroundColor = "white"                
+                document.querySelector("body").style.backgroundColor = "Black";
+               console.log("clicked happed" + translate);
+                }
+
+            main.addEventListener("click" , ()=>{
+
+                if (  main.style.backgroundColor ===  "black" ||  circle.style.backgroundColor === "white" ){
+                        whiteUI()
+                }else{
+                    blackUi();
+                }
+               
+
+               
+            })
+           
+
+
+
+        </script>
+</html>
+
+
