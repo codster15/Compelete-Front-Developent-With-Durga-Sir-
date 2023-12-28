@@ -25,6 +25,7 @@
 </script>
 =============================================================================
 <script>
+  
     function getdata() {
       var m1 = prompt();
       m1 = parseInt(m1);
@@ -139,6 +140,35 @@
 </script>
 
 
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+// callBack function
+
+<script>
+  
+  calculate = (a ,b , calback)=>{
+    result = a + b
+
+    return  calback(result)
+}
+
+
+showdata = (result)=>{
+  console.log(result)
+}
+test = (result)=>{
+  sum = 1000
+  sum = sum + result
+  console.log(sum)
+}
+
+
+calculate(10 , 20 , test);
+</script>
+
+
+calculate(10 , 20 , showdata);
 
 
 ==================================================================================================================================
