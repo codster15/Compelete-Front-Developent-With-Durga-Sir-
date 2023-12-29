@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="age" style=""></div>
+    <script>
+
+        function allProgramList (){
+   // concate string
+   function concate (){
+                  var Message = "Hello"
+        var name    = "Angelia" 
+
+        try{
+             var Message =  Message.concat(name);
+              alert(Message);
+        }catch{
+                   alert(name)
+        }
+        }
+  
+        //first letter capital remainning small
+        function firstCapitalLetter(){
+            var name = prompt("enter name here");
+     
+    
+        var dolowwercaseAll = name.toLowerCase(name)
+        
+         var firstchar = dolowwercaseAll.slice(0, 1)
+         firstchar = firstchar.toUpperCase(firstchar);
+
+         var FInal = firstchar.concat(dolowwercaseAll); 
+         alert(FInal);
+        }
+      
+      // Dog Age to Human Age Formula
+      function dogAgecalculator (){
+            
+        var dogAge = prompt(" Ente dog age ")
+
+        var cal = (dogAge -2 )*4 + 21
+
+        var res = alert(cal);
+      }
+
+
+//  calculate age 
+      function ageCalculate (){
+
+
+            var userAge = prompt("Enter your age  here " )
+
+            var actualage       = 90 - userAge;
+            var calculateDays   = actualage * 365;  
+            var calculateWeeks  = actualage * 52;  
+            var calculateMonths = actualage * 12;  
+
+            var storeAge = "You have " + calculateDays + " days  " + calculateWeeks + " Weeks ,  " + calculateMonths + " Months left"
+
+
+            console.log(storeAge)
+
+            document.querySelector(".age").innerHTML = storeAge;
+      } 
+
+
+      
+      function otp(){   
+          var data = ""
+          var value = 100000
+          for(var i = 0 ; i < 5 ; i++){
+
+            var no = Math.floor(Math.random()*value)
+
+               data = no;
+            console.log(data);
+          }
+
+       
+           
+
+
+        }
+
+        // bmi calculator
+      function bmi(mass , height){
+
+
+var bmiCAlculator = mass / (height * height)
+
+
+alert(Math.floor(bmiCAlculator));
+}
+
+bmi(65 , 1.8)
+bmi(70 , 1.6)
+
+
+
+function leapYear ( ) {
+
+var year  = prompt("Enter Year here ")
+
+
+
+
+var check = year % 4
+if( check == 0 ){
+
+
+
+ 
+           check = year  % 100
+            if(check == 0){
+
+                             check = year % 400;
+                              if(check == 0){
+
+                                alert("1lthis is leap year " + year)
+
+                              }else{
+                                alert("3loop Not a leap Year " + year)
+                              }
+            }else{
+
+              alert("2loop this is leap year " + check);
+          
+            }
+
+
+
+
+
+}else{
+  alert("1loop Not a leap Year " + year)
+}
+
+
+
+}
+
+leapYear();
+
+
+function guestlist (){
+      // var a = [1,2,4,6,"hello" ,3]
+
+        // console.log(a)
+        // console.log(a.includes("hello"))
+
+
+
+        var abc = ["amit" , "bodha","radhya" ,"gangu"]
+       var name =  prompt ("Enter your name");
+
+       var test = abc.includes(name);
+
+        if(test){
+          alert("Welcome MR - "+ name);
+        }else{
+          alert(" bhagg yaha se ")
+        }
+
+
+
+}
+  
+
+
+        }
+
+
+        function fizzbuss (){
+
+
+          var value = ""
+          for(i = 0 ; i <= 100 ; i++)
+
+          if(i % 3 == 0 ){
+              console.log("fizz")
+          }
+
+            console.log(i);
+
+
+
+        }
+  
+        fizzbuss();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    </script> 
+</body>
+</html>
