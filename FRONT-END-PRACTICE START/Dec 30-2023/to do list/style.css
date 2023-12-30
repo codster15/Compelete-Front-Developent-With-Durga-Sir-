@@ -1,0 +1,107 @@
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.main{
+    height: 99vh;
+    width: 100%;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(159deg, rgba(0,0,0,1) 24%, rgba(182,12,242,1) 88%);
+
+}
+
+.left{
+    height: 80% ;
+    width: 40%;
+   background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.right{
+    height: 80% ;
+    width: 40%;
+    background-color: antiquewhite;
+  
+}
+
+.app{
+background-color: white;
+    border-radius: 10px;
+    height: 85%;
+    width: 70%;
+    display: grid;
+    grid-template-rows: 70px 50px 50px 1fr;
+  
+}
+.enter{
+    height: 30px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px 10px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.click{
+ 
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    padding: 5px 5px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.tastEnter{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.common{
+    margin-top: 20px;
+    height: 20px;
+    width: 100px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    padding: 3px 2px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    
+    color: white;
+}
+.Delete{
+    background-color: red;
+}
+.taskDetails{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

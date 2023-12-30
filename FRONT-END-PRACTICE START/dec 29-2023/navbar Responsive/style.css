@@ -1,0 +1,189 @@
+
+
+
+*{
+ margin: 0px;
+ padding: 0px;    
+ font-family: 'Noto Sans KR', sans-serif;       
+}
+.main{
+    height: 100%;
+    width: 100%;
+    
+
+
+ 
+
+}
+
+.Fullnav{
+    height: 100px;
+    width: 100vw;
+    width: calc(100vw - 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    margin: 0 40px;
+
+    
+}
+.nav-left h2{
+    font-size: 2.3rem;
+
+}
+.nav-right{
+    display: flex;
+    font-size: 1.3rem;
+    gap: 3vw;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+
+  
+   
+}
+i{
+    font-size: 2rem;
+    display: none;
+}
+
+.content{
+    border-top: 2px solid #ccc ;
+    height:calc(100vh - 100px);
+    width: 100%;
+
+    display: flex;
+
+}
+
+.left{
+    height: 100%;
+    width: 55%;
+    width: calc(55% - 130px);
+    height: calc(100vh - 300px);
+ 
+    padding: 100px  130px;
+}
+.right{
+    height: 100%;
+    width: 45%;
+  
+}
+
+.left h1 {
+    font-size: 3.9vw;
+    width: 100%;
+}
+
+.left h1 span{
+   color: #FF473D;
+   font-size: 4.5vw;
+}
+
+.left p{
+    font-size: 1.8vh;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    color: #7c7c7c;
+}
+button{
+    margin-top: 20px;
+    font-size: 1.5vw;
+    padding: 0.8vw 1.5vw;
+    border-radius: 7px;
+    border: none;
+    background-color: #FF473D;
+    color: white;
+    font-weight: 700;
+}
+
+.right img{
+    height: 100%;
+    width: 100%;
+}
+
+.nav-right button{
+    padding: 10px 20px;
+    font-size: 1.3rem;
+      
+    margin-bottom: 20px;
+
+}
+
+
+
+@media(max-width : 600px){
+   
+    .Fullnav{
+        width: calc(100vw - 40px);
+        margin: 0 20px;
+        color: white;
+        height: 80px;
+    }
+    .nav-left h2{
+        font-size: 1.5rem;
+        color: black;
+    
+    }
+    .nav-right h4{
+      
+       
+        font-size: 4vw;
+        display: none;
+    
+    }
+
+      .nav-right i {
+        display: block;
+       
+    }
+
+    .nav-right button{
+        display: none;
+    }
+
+    .content{
+        border-top: 1px solid #ccc;
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+
+    
+    }
+    .left{
+        padding: 50px 50px;
+        width: 80vw;
+        height: 55%;
+    }
+    .right{
+     
+        width: 100vw;
+        height: 45%;
+    }
+
+    button{
+        
+        font-size: 2.5vh;
+        padding: 1.5vh 3.3vh;
+        border-radius: 7px;
+        border: none;
+        background-color: #FF473D;
+        color: white;
+        font-weight: 400;
+    }
+    .left h1 {
+        font-size: 9vw;
+    }
+
+    .left h1 span{
+        font-size: 10vw;
+        line-height: 11vw;
+
+    }
+    .left p{
+        font-size: 3.6vw;
+        width: 100%;
+     
+    }
+} 

@@ -172,7 +172,7 @@ function guestlist (){
   
 
 
-        }
+       
 
 
         function fizzbuss (){
@@ -195,12 +195,39 @@ function guestlist (){
 
 
 
+        function fizzbuzz (){
 
 
+var no = "";
+
+for(var i = 1 ; i<= 100 ; i++){
+
+  no = i ; 
+
+if( no % 3 == 0 && no % 5 == 0 ){
+    
+    console.log("--------------------------------------FIzz_Buzz");
+  }
+  else if(no % 3 == 0 ){
+    console.log("--------------------------------------Fizz " + no )
+  }else if( no % 5 == 0  ){
+    console.log("--------------------------------------Buzz " + no )
+  } else{
+    console.log(no);
+  }
+ 
+}
 
 
+}
+
+                fizzbuzz();
 
 
+      }
+
+
+    
 
 
 
