@@ -12,19 +12,20 @@ Advance JS
          Constructors
     Objects 
     super 
+
     Exception handling
-    try
-    catch
-    throw
+        try
+        catch
+        throw
     finally data security in JS
-    closures
+       closures
 
 <!-- ------------------------------------------------------------------------- -->
 
-.                                                         static inheritance between two static object
+.                                                   static inheritance between two static object
 
 
-
+Static --> to static      
 
 . In STATIC INHERITENCE ---> We Use ( .__proto__ ) 
 
@@ -48,7 +49,7 @@ Advance JS
     gender: "male",
 
     //   created ram method inside the function
-    ram() {
+    ram () {
       console.log("name - " + this.name);
       console.log("age - " + this.age);
       console.log("gender - " + this.gender);
@@ -173,19 +174,25 @@ var sdetails = Object.create(schooldetails);
 
 <script>
   class Bookdetails {
-    constructor() {
-      this.bookname = "City of dreams";
-      this.price = 4000;
-      this.author = "chetan";
-    }
+    
 
-    book1() {
-      console.log("Alchemist");
-    }
+          constructor() {
+            this.bookname = "City of dreams";
+            this.price = 4000;
+            this.author = "chetan";
+          }
 
-    book2() {
-      console.log("Atomic habit");
-    }
+
+
+            book1() {
+              console.log("Alchemist");
+            }
+
+
+
+            book2() {
+              console.log("Atomic habit");
+            }
   }
 
   var klass = new Bookdetails(); // most important step is whole class got store --> klass .now with help of klass we cal call method inside it  .so now klass become the object
@@ -209,11 +216,13 @@ var sdetails = Object.create(schooldetails);
 
 
 <script>
+
+
   class Animal {
     constructor(name, age, size) {
-      this.name = name;
-      this.age = age;
-      this.size = size;
+      this.Animalname = name;
+      this.Animalage = age;
+      this.Animalsize = size;
     }
 
     dog() {
@@ -233,6 +242,8 @@ var sdetails = Object.create(schooldetails);
 
   console.log(innocent);
   console.log(dangerous);
+
+
 </script>
 
 =============================================================================================================================
@@ -497,13 +508,8 @@ create an object for bank account
 
 
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
         ul{
             border: 1px solid;
@@ -657,15 +663,13 @@ Exception Handling:
 
      Runtime errors
 
+            try
 
+            catch
 
-     try
+            finally
 
-     catch
-
-     finally
-
-     throw   
+            throw   
 
 
 
@@ -888,40 +892,7 @@ time    - 5:00 (Starts from the five min);
   }
 
 </script>
-=======================================================================================================================
 
-
-.                               data security  --> closures (Most important)
-
-lecture - 21-9-22
-time --> 30:00
-
-
-<script>
-
-  (function (){
-      var data = {
-      name : "Raj"
-  }
-
-  function test  (){
-      console.log("I am from test")
-  }
-
-  class Sample{
-
-  }
-
-  console.log("i am from inside closer data object - " + data.name);
-  test();
-  })()
-
-  console.log("i get called from outside closures --> data object - " + data.name);
- 
-  test();
- 
- 
-</script>
 
 
 ======================================================================================================
@@ -985,7 +956,8 @@ time - 40:00
 
 
 <!-- css file styling -->
-ul{
+<style>
+  ul{
   width: 500px;
   border: 1px solid;
   margin: 20px auto;
@@ -1002,14 +974,16 @@ li{
   display: none;
 }
 
+</style>
+
 
 
 
 
 
 <!-- javascript file  -->
-
-var doOperation = function (actiontype){
+<script>
+  var doOperation = function (actiontype){
 
   var storeobj = {};
 
@@ -1047,6 +1021,9 @@ var doOperation = function (actiontype){
   document.querySelector(".showOpr").innerText = actiontype; 
   document.querySelector(".hideresult").style.display = "block";
 }
+</script>
+
+
 
 
 
@@ -1063,8 +1040,8 @@ var doOperation = function (actiontype){
 
 
 <!-- External Liabrary -->
-
-/**
+<script>
+  /**
  * Function to calculate the sum of two values
  * @param {number/string} firstvalue 
  * @param {number/string} secondvalue 
@@ -1149,8 +1126,52 @@ var dodivision = (firstvalue, secondvalue) => {
   return result;
 };
 
+</script>
+
 
 ==========================================================================================================
+
+
+
+
+
+.                               data security  --> closures (Most important)
+
+lecture - 21-9-22
+time --> 30:00
+
+
+<script>
+
+  (function (){
+      var data = {
+      name : "Raj"
+  }
+
+  function test  (){
+      console.log("I am from test")
+  }
+
+  class Sample{
+
+  }
+
+  console.log("i am from inside closer data object - " + data.name);
+  test();
+  })()
+
+  console.log("i get called from outside closures --> data object - " + data.name);
+ 
+  test();
+ 
+ 
+</script>
+
+
+=======================================================================================================================
+
+
+
 
 
 
@@ -1210,6 +1231,9 @@ var dodivision = (firstvalue, secondvalue) => {
 
 
 .                  pure clouser program with data security with using --> (external liabrary)
+
+
+
 
 
 lecture - 22-9-22
